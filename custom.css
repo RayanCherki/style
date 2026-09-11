@@ -1025,20 +1025,20 @@ html.mj-support-active [data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-ite
   transform-origin: center bottom !important; /* alttan buyut ki yazi ile bosluk home ile ayni kalsin */
 }
 [data-mj="bottom-nav-item"] span[style*="b56598da"] {
-  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/canli-casino.png") !important;
-  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/canli-casino.png") !important;
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/icons/canli-casino.png") !important;
+  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/icons/canli-casino.png") !important;
 }
 [data-mj="bottom-nav-item"] span[style*="8c4b3e90"] {
-  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/casino.png") !important;
-  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/casino.png") !important;
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/icons/casino.png") !important;
+  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/icons/casino.png") !important;
 }
 [data-mj="bottom-nav-item"] span[style*="c1e60002"] {
-  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/spor.png") !important;
-  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/spor.png") !important;
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/icons/spor.png") !important;
+  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/icons/spor.png") !important;
 }
 [data-mj="bottom-nav-item"] span[style*="e4c0aa2d"] {
-  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/canli-destek.png") !important;
-  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/canli-destek.png") !important;
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/icons/canli-destek.png") !important;
+  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/icons/canli-destek.png") !important;
 }
 
 /* ===== Promosyon filtre sekmeleri: alt cizgi -> altin hap butonlar ===== */
