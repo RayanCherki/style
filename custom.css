@@ -1,0 +1,1184 @@
+[data-mj="logo"] .app-ltr-le4fez {
+  max-width: none !important;
+}
+
+/* Not: hash'li sinif (.app-ltr-ja3k2i) platform guncellemesinde degisti;
+   artik "icinde bottom-nav-item tasiyan kap" olarak yapiya bagli seciyoruz. */
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) {
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: space-evenly !important;
+  /* Cam efekti: buzlu koyu lacivert zemin, ust kavis, ince beyaz kenar, yumusak golge */
+  border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 20px 20px 0 0 !important;
+  background: linear-gradient(180deg, rgba(14, 30, 60, 0.42), rgba(6, 14, 34, 0.66)) !important;
+  box-shadow:
+    0 -10px 44px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20) !important;
+  backdrop-filter: blur(26px) saturate(1.5) !important;
+  -webkit-backdrop-filter: blur(26px) saturate(1.5) !important;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease !important;
+  padding: 12px 8px 14px !important;
+}
+
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"] {
+  order: unset !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="b56598da"]) { order: 1 !important; }
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="8c4b3e90"]) { order: 2 !important; }
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="9f1f77ca"]) { order: 3 !important; }
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="c1e60002"]) { order: 4 !important; }
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="e4c0aa2d"]) { order: 5 !important; }
+
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="9f1f77ca"]) {
+  color: #FFFFFF !important;
+  font-size: 8px !important;
+  line-height: 8px !important;
+  /* Merkez: notr cam kutu + altin kenar/glow (altin ikonlarla uyumlu, mavi degil) */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.03)) !important;
+  border: 1px solid rgba(246, 196, 83, 0.55) !important;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.45),
+    0 0 24px rgba(246, 196, 83, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 52px !important;
+  min-height: 52px !important;
+  border-radius: 9px !important;
+  transform: translateY(-2px) scale(1.15) !important;
+  z-index: 10 !important;
+}
+
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="9f1f77ca"]).active-link,
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="9f1f77ca"])[aria-current="page"] {
+  filter: brightness(1.08) saturate(1.08) !important;
+}
+
+[data-mj="widget-banner"] [data-mj="widget-banner-link"],
+[data-mj="widget-banner"] [data-mj="widget-banner-link"] img {
+  border-radius: 0 !important;
+}
+
+[data-mj="widget-banner-container"],
+[data-mj="widget-banner"],
+[data-mj="widget-banner-slider"],
+[data-mj="widget-banner-item"],
+[data-mj="widget-banner"] [data-mj="widget-banner-link"],
+[data-mj="widget-banner"] [data-mj="widget-banner-link"] img {
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  mask: none !important;
+  -webkit-mask: none !important;
+}
+
+@media (min-width: 769px) {
+  [data-mj="widget-banner-container"],
+  [data-mj="widget-banner"],
+  [data-mj="widget-banner-slider"],
+  [data-mj="widget-banner-item"] {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  [data-mj="widget-banner"] [data-mj="widget-banner-link"] {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3000 / 1090 !important;
+    overflow: hidden !important;
+  }
+
+  [data-mj="widget-banner"] [data-mj="widget-banner-link"] img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: fill !important;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-mj="widget-banner"] [data-mj="widget-banner-link"] {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 0 !important;
+    padding-top: 71.25% !important;
+    overflow: hidden !important;
+  }
+
+  [data-mj="widget-banner"] [data-mj="widget-banner-link"] img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: fill !important;
+  }
+
+  [data-mj="widget-banner-container"],
+  [data-mj="widget-banner"],
+  [data-mj="widget-banner-slider"],
+  [data-mj="widget-banner-item"] {
+    height: auto !important;
+  }
+}
+
+[data-mj="widget-pages"],
+[data-mj="widget-pages"] [data-mj="widget-pages-container"],
+[data-mj="widget-pages"] [data-mj="widget-pages-grid"] {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+[data-mj="widget-pages"] [data-mj="widget-pages-grid"] {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 10px !important;
+  align-items: start !important;
+}
+
+[data-mj="widget-pages"] [data-mj="widget-pages-item"],
+[data-mj="widget-pages"] [data-mj="widget-pages-item"] > div,
+[data-mj="widget-pages"] [data-mj="widget-pages-item"] > div > div,
+[data-mj="widget-pages"] [data-mj="widget-pages-item"] a {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  inset: auto !important;
+}
+
+[data-mj="widget-pages"] [data-mj="widget-pages-item"] img {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 886 / 1100 !important;
+  object-fit: fill !important;
+  border-radius: 12px !important;
+}
+
+@media (max-width: 768px) {
+  [data-mj="widget-pages"] [data-mj="widget-pages-container"] {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  [data-mj="widget-pages"] [data-mj="widget-pages-grid"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  [data-mj="widget-pages"] [data-mj="widget-pages-item"]:nth-child(n+4) {
+    display: none !important;
+  }
+
+  [data-mj="widget-pages"] [data-mj="widget-pages-item"]:nth-child(1) { order: 1 !important; }
+  [data-mj="widget-pages"] [data-mj="widget-pages-item"]:nth-child(3) { order: 2 !important; }
+  [data-mj="widget-pages"] [data-mj="widget-pages-item"]:nth-child(2) { order: 3 !important; }
+
+  /* Kategori kartlari (Casino/Canli Casino/Spor/Sanal/E-spor) sadece webde; mobilde tamamen gizle.
+     Iki linki birden iceren widget = kategori widget'i (shortcut/beniara/carka dokunmaz). */
+  [data-mj="widget-pages"]:has(a[href="/tr/livecasino"]):has(a[href="/tr/virtual"]) {
+    display: none !important;
+  }
+}
+
+footer,
+footer a,
+footer li {
+  font-size: 13px !important;
+  font-family: Rubik !important;
+}
+
+.legal,
+.legal-info,
+.footer-legal {
+  font-size: 13px !important;
+}
+
+aside,
+aside a,
+.sidebar,
+.sidebar a,
+.side-menu,
+.side-menu a {
+  font-size: 13px !important;
+}
+
+@media (min-width: 1000px) {
+  html,
+  body {
+    background-color: #0a1428 !important;
+  }
+
+  body {
+    position: relative !important;
+    z-index: 0 !important;
+  }
+
+  body::before {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/web-skin.webp") !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    pointer-events: none !important;
+  }
+
+  body::after {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background: rgba(0, 8, 28, 0.45) !important;
+    pointer-events: none !important;
+  }
+
+  [data-mj="root-layout"],
+  [data-mj="page-content"] {
+    position: relative !important;
+    z-index: 1 !important;
+    background: transparent !important;
+  }
+
+  [data-mj="page-content"] {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+    align-self: stretch !important;
+  }
+
+  [data-mj="widget-banner-container"],
+  [data-mj="widget-banner"],
+  [data-mj="widget-banner-slider"],
+  [data-mj="widget-banner-item"],
+  [data-mj="widget-banner"] [data-mj="widget-banner-link"] {
+    background: transparent !important;
+  }
+
+  footer {
+    background-color: transparent !important;
+  }
+
+  [data-mj="widget-banner-container"] {
+    max-width: 1500px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 999px) {
+  html,
+  body {
+    background-color: #0a1428 !important;
+  }
+
+  body {
+    position: relative !important;
+    z-index: 0 !important;
+  }
+
+  body::before {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background-image: url("./mobile-skin.webp") !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    pointer-events: none !important;
+  }
+
+  body::after {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background: rgba(0, 8, 28, 0.50) !important;
+    pointer-events: none !important;
+  }
+
+  [data-mj="root-layout"],
+  [data-mj="page-content"] {
+    position: relative !important;
+    z-index: 1 !important;
+    background: transparent !important;
+  }
+
+  [data-mj="widget-banner-container"],
+  [data-mj="widget-banner"],
+  [data-mj="widget-banner-slider"],
+  [data-mj="widget-banner-item"],
+  [data-mj="widget-banner"] [data-mj="widget-banner-link"] {
+    background: transparent !important;
+  }
+
+  footer {
+    background-color: transparent !important;
+  }
+}
+
+[data-mj="header"],
+.app-ltr-rl0abu,
+.app-ltr-pri86d,
+[data-mj="social-links"] {
+  --glass-bg: rgba(10, 18, 45, 0.58);
+  --glass-bg-2: rgba(29, 42, 78, 0.48);
+  --glass-hover: rgba(255, 255, 255, 0.10);
+  --glass-active: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-border-strong: rgba(255, 255, 255, 0.22);
+  --glass-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+  --glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  --glass-radius: 16px;
+  --glass-radius-sm: 11px;
+  --glass-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-mj="header-nav-list"] {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--glass-radius) !important;
+  box-shadow: var(--glass-shadow), var(--glass-inset) !important;
+  backdrop-filter: blur(22px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(135%) !important;
+  padding: 6px 8px !important;
+  /* kutu icerige gore daralsin + ortala: sabit 1400px'te sola yasliydi, dis sol/sag bosluk esitlenir */
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  transition: box-shadow 0.2s var(--glass-ease) !important;
+}
+
+[data-mj="header-nav-list"] ul {
+  gap: 2px !important;
+}
+
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink,
+[data-mj="header-nav-list"] > button.sl-navlink {
+  border-radius: var(--glass-radius-sm) !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  padding: 8px 9px !important;
+  white-space: nowrap !important;
+  transition: background 0.2s var(--glass-ease),
+              border-color 0.2s var(--glass-ease),
+              box-shadow 0.2s var(--glass-ease),
+              transform 0.2s var(--glass-ease) !important;
+}
+
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink:hover,
+[data-mj="header-nav-list"] > button.sl-navlink:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  transform: translateY(-1px) !important;
+}
+
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink:active,
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink.active-link,
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink[aria-current="page"],
+[data-mj="header-nav-list"] > button.sl-navlink:active {
+  background: var(--glass-active) !important;
+  border-color: var(--glass-border-strong) !important;
+  box-shadow: var(--glass-inset) !important;
+}
+
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink:focus-visible,
+[data-mj="header-nav-list"] > button.sl-navlink:focus-visible {
+  outline: 2px solid rgba(120, 170, 255, 0.85) !important;
+  outline-offset: 2px !important;
+}
+
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] .sl-navlink > span:first-child {
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 auto !important;
+}
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] .sl-navlink p {
+  margin: 0 0 0 6px !important;
+  line-height: 1 !important;
+}
+
+.app-ltr-rl0abu {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--glass-radius) !important;
+  box-shadow: var(--glass-shadow), var(--glass-inset) !important;
+  backdrop-filter: blur(22px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(135%) !important;
+  padding: 8px !important;
+  max-height: min(70vh, 520px) !important;
+  overflow-y: auto !important;
+  z-index: 1200 !important;
+  animation: glassFade 0.18s var(--glass-ease) both !important;
+}
+
+@keyframes glassFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.app-ltr-rl0abu [data-mj="header-nav-item"] > .sl-navlink {
+  border-radius: var(--glass-radius-sm) !important;
+  padding: 11px 12px !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  transition: background 0.18s var(--glass-ease),
+              border-color 0.18s var(--glass-ease) !important;
+}
+.app-ltr-rl0abu [data-mj="header-nav-item"] > .sl-navlink:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+.app-ltr-rl0abu [data-mj="header-nav-item"] > .sl-navlink:focus-visible {
+  outline: 2px solid rgba(120, 170, 255, 0.85) !important;
+  outline-offset: -2px !important;
+}
+
+.app-ltr-rl0abu { scrollbar-width: thin !important; scrollbar-color: rgba(255,255,255,0.22) transparent !important; }
+.app-ltr-rl0abu::-webkit-scrollbar { width: 6px !important; }
+.app-ltr-rl0abu::-webkit-scrollbar-track { background: transparent !important; }
+.app-ltr-rl0abu::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.22) !important; border-radius: 8px !important; }
+
+.app-ltr-pri86d > .app-ltr-1a7d0yc {
+  background: rgba(0, 8, 28, 0.55) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+}
+
+.app-ltr-pri86d .app-ltr-exfy0i {
+  background: var(--glass-bg) !important;
+  border-right: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow), var(--glass-inset) !important;
+  backdrop-filter: blur(22px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(135%) !important;
+  padding-top: env(safe-area-inset-top) !important;
+  padding-bottom: env(safe-area-inset-bottom) !important;
+}
+
+.app-ltr-pri86d .app-ltr-1q5mnmx,
+.app-ltr-pri86d .app-ltr-7br5ez {
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+}
+
+[data-mj="mobile-nav-list"] .sl-navlink {
+  min-height: 52px !important;
+  border-radius: 12px !important;
+  background: var(--glass-bg-2) !important;
+  border: 1px solid var(--glass-border) !important;
+  transition: background 0.18s var(--glass-ease),
+              border-color 0.18s var(--glass-ease) !important;
+}
+[data-mj="mobile-nav-list"] .sl-navlink:hover,
+[data-mj="mobile-nav-list"] .sl-navlink:active {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border-strong) !important;
+}
+[data-mj="mobile-nav-list"] .sl-navlink:focus-visible {
+  outline: 2px solid rgba(120, 170, 255, 0.85) !important;
+  outline-offset: -2px !important;
+}
+
+[data-mj="mobile-nav-list"] ul > li {
+  background: transparent !important;
+  margin-bottom: 8px !important;
+}
+
+[data-mj="mobile-nav-list"] .app-ltr-i6bazn .sl-navlink {
+  min-height: 42px !important;
+  border-radius: 10px !important;
+  margin-left: 22px !important;
+  margin-right: 8px !important;
+  width: calc(100% - 30px) !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  font-size: 13px !important;
+}
+[data-mj="mobile-nav-list"] .app-ltr-i6bazn .sl-navlink > span:first-child,
+[data-mj="mobile-nav-list"] .app-ltr-i6bazn .sl-navlink i.sl-icon {
+  flex: 0 0 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  font-size: 20px !important;
+  line-height: 20px !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+[data-mj="mobile-nav-list"] .app-ltr-i6bazn .sl-navlink:hover,
+[data-mj="mobile-nav-list"] .app-ltr-i6bazn .sl-navlink:active {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+.app-ltr-pri86d button[aria-label="arrow_down"] {
+  min-width: 36px !important;
+  min-height: 36px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 10px !important;
+  transition: transform 0.2s var(--glass-ease), background 0.18s var(--glass-ease) !important;
+}
+.app-ltr-pri86d button[aria-label="arrow_down"]:hover {
+  background: var(--glass-hover) !important;
+}
+
+.app-ltr-pri86d [class*="sl-select__control"] {
+  background: var(--glass-bg-2) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 12px !important;
+  min-height: 52px !important;
+  box-shadow: var(--glass-inset) !important;
+}
+.app-ltr-pri86d [class*="sl-select__menu"] {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(22px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(135%) !important;
+}
+
+.app-ltr-pri86d .app-ltr-1q5mnmx,
+.app-ltr-pri86d .app-ltr-7br5ez {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(255,255,255,0.22) transparent !important;
+}
+.app-ltr-pri86d .app-ltr-1q5mnmx::-webkit-scrollbar,
+.app-ltr-pri86d .app-ltr-7br5ez::-webkit-scrollbar { width: 6px !important; }
+.app-ltr-pri86d .app-ltr-1q5mnmx::-webkit-scrollbar-track,
+.app-ltr-pri86d .app-ltr-7br5ez::-webkit-scrollbar-track { background: transparent !important; }
+.app-ltr-pri86d .app-ltr-1q5mnmx::-webkit-scrollbar-thumb,
+.app-ltr-pri86d .app-ltr-7br5ez::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.22) !important;
+  border-radius: 8px !important;
+}
+
+[data-mj="header"] button[aria-label="menu"] {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--glass-border) !important;
+  background: var(--glass-bg-2) !important;
+  transition: background 0.18s var(--glass-ease) !important;
+}
+[data-mj="header"] button[aria-label="menu"] svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+[data-mj="header"] button[aria-label="menu"]:hover {
+  background: var(--glass-hover) !important;
+}
+
+[data-mj="social-links"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: nowrap !important;
+  padding: 10px 16px !important;
+  border-radius: 14px !important;
+  border: 1px solid var(--glass-border) !important;
+  background: var(--glass-bg-2) !important;
+  box-shadow: var(--glass-inset) !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+[data-mj="social-links"] > a {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  transition: transform 0.18s var(--glass-ease),
+              opacity 0.18s var(--glass-ease) !important;
+}
+[data-mj="social-links"] > a:hover {
+  transform: translateY(-1px) !important;
+  opacity: 0.85 !important;
+}
+[data-mj="social-links"] > a:focus-visible {
+  outline: 2px solid rgba(120, 170, 255, 0.85) !important;
+  outline-offset: 2px !important;
+}
+[data-mj="social-links"] > a img {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.app-ltr-pri86d *:has(> [data-mj="social-links"]) {
+  background: transparent !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  [data-mj="header-nav-list"],
+  .app-ltr-rl0abu,
+  .app-ltr-pri86d .app-ltr-exfy0i,
+  .app-ltr-pri86d [class*="sl-select__menu"] {
+    background: rgba(10, 18, 45, 0.96) !important;
+  }
+  .app-ltr-pri86d > .app-ltr-1a7d0yc {
+    background: rgba(0, 8, 28, 0.78) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-mj="header-nav-list"] .sl-navlink,
+  [data-mj="header-nav-list"] > button.sl-navlink,
+  .app-ltr-rl0abu,
+  .app-ltr-rl0abu .sl-navlink,
+  [data-mj="mobile-nav-list"] .sl-navlink,
+  .app-ltr-pri86d button[aria-label="arrow_down"],
+  [data-mj="header"] button[aria-label="menu"] {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+[data-mj="widget-fixed-image-banner"] {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: auto !important;
+}
+[data-mj="widget-fixed-image-banner"] [data-mj="widget-fixed-image-banner-container"] {
+  width: auto !important;
+  max-width: 656px !important;
+  height: auto !important;
+  border-radius: 24px !important;
+  backdrop-filter: blur(3px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+}
+[data-mj="widget-fixed-image-banner"] img {
+  width: 100% !important;
+  max-width: 656px !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+[data-mj="footer-logo"] {
+  width: auto !important;
+  max-width: none !important;
+  height: auto !important;
+}
+[data-mj="footer-logo"] img {
+  height: 52px !important;
+  width: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+}
+
+[data-mj="widget-fixed-image-banner"] ~ [data-mj="widget-fixed-image-banner"] [data-mj="widget-fixed-image-banner-container"] {
+  max-width: 140px !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+[data-mj="widget-fixed-image-banner"] ~ [data-mj="widget-fixed-image-banner"] img {
+  max-width: 140px !important;
+}
+
+@media (max-width: 768px) {
+  [data-mj="widget-fixed-image-banner"] ~ [data-mj="widget-fixed-image-banner"] [data-mj="widget-fixed-image-banner-container"],
+  [data-mj="widget-fixed-image-banner"] ~ [data-mj="widget-fixed-image-banner"] img {
+    max-width: 90px !important;
+  }
+  [data-mj="logo"] img {
+    transform: none !important;
+    height: 32px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+}
+
+.app-ltr-pri86d a.app-ltr-3860w8 img {
+  transform: scale(1.2) !important;
+  transform-origin: center center !important;
+}
+
+@media (max-width: 768px) {
+  [data-mj="footer-logo"] {
+    display: none !important;
+  }
+}
+
+/* App indirme rozetleri (App Store + Google Play) - uygulama linkine gore scope, sponsor/lisans etkilenmez */
+[data-mj="widget-fixed-image-banner"]:has(a[href*="uygulama.marinacasinovip.com"]) {
+  display: inline-block !important;
+  width: auto !important;
+  vertical-align: middle !important;
+  margin: 4px 8px !important;
+}
+[data-mj="widget-fixed-image-banner"]:has(a[href*="uygulama.marinacasinovip.com"]) [data-mj="widget-fixed-image-banner-container"] {
+  max-width: 200px !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+[data-mj="widget-fixed-image-banner"]:has(a[href*="uygulama.marinacasinovip.com"]) img {
+  max-width: 200px !important;
+  width: 100% !important;
+}
+/* iki rozeti saran main'i ortala; diger widgetlarin yazilarini koru */
+main:has([data-mj="widget-fixed-image-banner"] a[href*="uygulama.marinacasinovip.com"]) {
+  text-align: center !important;
+}
+main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
+  text-align: initial;
+}
+
+/* Kisayol butonlari: webde 8 yan yana (6+2 widget), mobilde 4+4 */
+[data-mj="widget-pages"]:has(a[href*="beniara"]) {
+  display: inline-block !important;
+  width: 74.4% !important;
+  vertical-align: top !important;
+}
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) {
+  display: inline-block !important;
+  width: 24.8% !important;
+  vertical-align: top !important;
+}
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-container"],
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-container"] {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+}
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-grid"] {
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 4px !important;
+}
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-grid"] {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 4px !important;
+}
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-item"],
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-item"] {
+  order: 0 !important;
+  display: block !important;
+}
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-item"] > div,
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-item"] > div > div,
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-item"] > div > div > div,
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-item"] a,
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-item"] > div,
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-item"] > div > div,
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-item"] > div > div > div,
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-item"] a {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  inset: auto !important;
+  transform: none !important;
+}
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-item"] img,
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-item"] img {
+  aspect-ratio: 428 / 526 !important; /* butonlarin gercek orani -> yan bosluk yok, tam dolar, buyuk + esit */
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+}
+[data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-item"] p,
+[data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-item"] p {
+  display: none !important;
+}
+@media (min-width: 769px) {
+  /* Kisayollar tam-genislik MAIN'in altinda (icerik kolonu max 1500px disinda). % kullaninca zoom-out'ta
+     sinirsiz buyuyordu. min(100%,1500px) ile icerik kolonuna sabitle + ortala (banner ile hizali). */
+  [data-mj="widget-pages"]:has(a[href*="beniara"]) {
+    width: calc(min(100%, 1500px) * 0.75 - 61px) !important;
+    margin: 0 0 0 max(40px, calc((100% - 1500px) / 2 + 40px)) !important;
+    box-sizing: border-box !important;
+  }
+  [data-mj="widget-pages"]:has(a[href*="vipclub"]) {
+    width: calc(min(100%, 1500px) * 0.25 - 23px) !important;
+    margin: 0 max(40px, calc((100% - 1500px) / 2 + 40px)) 0 4px !important;
+    padding-left: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+@media (max-width: 768px) {
+  /* Mobilde 4+4. 6'li widget 4 sutun (row1:4, row2:2). 2'li widget (Slot+VIP) 2. siranin sagina cekilir.
+     Padding/gap kisik -> butonlar buyuk. buton W=(100vw-30)/4=25vw-7.5px, H=W*534/460 ~ 29vw. */
+  [data-mj="widget-pages"]:has(a[href*="beniara"]) {
+    display: block !important;
+    width: 100% !important;
+    margin: 14px 0 0 !important; /* banner ile arasina bosluk */
+    padding: 0 6px !important;
+    box-sizing: border-box !important;
+  }
+  [data-mj="widget-pages"]:has(a[href*="beniara"]) [data-mj="widget-pages-grid"] {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+  [data-mj="widget-pages"]:has(a[href*="vipclub"]) {
+    display: block !important;
+    width: calc(50vw - 9px) !important;
+    margin: calc(-30.7vw + 9px) 6px 0 auto !important; /* bir satir yukari cek -> 2. sira, sag */
+    box-sizing: border-box !important;
+  }
+  [data-mj="widget-pages"]:has(a[href*="vipclub"]) [data-mj="widget-pages-grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+  }
+}
+
+/* Header logo: HD seffaf animasyonlu WebP (panel GIF 200KB limitini asar) */
+[data-mj="custom-header"] [data-mj="logo"] img {
+  content: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/logo-anim-1280.webp") !important;
+}
+@media (max-width: 768px) {
+  [data-mj="custom-header"] [data-mj="logo"] img {
+    content: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@main/logo-anim-640.webp") !important;
+  }
+}
+
+/* Footer nav linkleri: yazi basinda, soluklasarak biten sari cizgi */
+[data-mj="footer-nav-item"] a.sl-navlink {
+  display: inline-block !important;
+  position: relative !important;
+}
+[data-mj="footer-nav-item"] a.sl-navlink::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 16px !important;
+  top: calc(50% + 0.55em) !important;
+  width: 48px !important;
+  height: 3px !important;
+  border-radius: 2px !important;
+  background: linear-gradient(90deg, #fdbb10 0%, rgba(253, 187, 16, 0) 100%) !important;
+}
+@media (max-width: 768px) {
+  [data-mj="footer-nav"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: max-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  [data-mj="footer-nav-item"] a.sl-navlink { text-align: left !important; }
+}
+
+/* Header bakiye: ikon + miktar kucult (web + mobil) */
+[data-mj="header-right"] span:has(> object[data*="AssetTemplateSite"]) {
+  transform: scale(0.88) !important;
+  transform-origin: right center !important;
+  margin-right: -4px !important;
+}
+/* ikon ile miktar arasindaki boslugu kucult (miktar buyudukce sola uzar, bosluk sabit) */
+[data-mj="header-right"] div:has(> p[color]) {
+  margin-left: -7px !important;
+}
+[data-mj="header-right"] div:has(> p[color]) > p:first-child {
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+}
+[data-mj="header-right"] p[color] {
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+}
+
+/* UYGULAMA nav linki sadece webde: mobil cekmecede gizle */
+[data-mj="mobile-nav-list"] li:has(a[href*="uygulama.marinacasinovip.com"]),
+[data-mj="mobile-nav-list"] a[href*="uygulama.marinacasinovip.com"] {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  [data-mj="widget-fixed-image-banner"]:has(a[href*="uygulama.marinacasinovip.com"]) {
+    margin: 3px 5px !important;
+  }
+  [data-mj="widget-fixed-image-banner"]:has(a[href*="uygulama.marinacasinovip.com"]) [data-mj="widget-fixed-image-banner-container"],
+  [data-mj="widget-fixed-image-banner"]:has(a[href*="uygulama.marinacasinovip.com"]) img {
+    max-width: 130px !important;
+  }
+}
+
+/* Hesap menusu > Bonuslarim: sadece Bonus Talebi + Promosyon Kodu kalsin.
+   Yapi: li > div > a.sl-navlink. Her li tek link -> li'yi gizle ki slot komple kalksin,
+   kalan iki oge yukari kaysin ve acilir kutu kuculsun. */
+li:has(a.sl-navlink[href$="t=bonuses"]),
+li:has(a.sl-navlink[href$="t=instant_cashback"]),
+li:has(a.sl-navlink[href$="t=bonuses_history"]) {
+  display: none !important;
+}
+
+/* Arama paneli bos-durum basligi: "Find Your Favorite Game" -> "Oyun Ara".
+   JS ile textContent degistirince React render'i cokuyor (arama bozuluyordu),
+   o yuzden orijinal metni gizleyip ::after ile Turkce bastiriyoruz (React'e dokunmadan).
+   Sonuc metinleri (No Result / Result Not Found) React'in kontrolunde -> onlara dokunmuyoruz. */
+.app-ltr-12yvva5 h3 { font-size: 0 !important; }
+.app-ltr-12yvva5 h3::after {
+  content: "Oyun Ara";
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  font-family: Rubik, sans-serif;
+  line-height: 18px;
+}
+
+/* Alt menu ikonlari: hepsine tek tip altin degrade (premium, butunluklu gorunum).
+   Ikonlar mask-image oldugu icin arka plani boyayinca sekil o renge burunur; sekiller korunur. */
+[data-mj="bottom-nav-item"] span[style*="mask-image"] {
+  background-image: linear-gradient(180deg, #ffe7a3 0%, #f4c65a 55%, #e0a63a 100%) !important;
+  background-color: transparent !important;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.4)) !important;
+}
+
+/* Secili/etkilesimli alt menu sekmesi yazisi: platformun mavisi yerine altin (tema uyumu).
+   CANLI DESTEK route degil (span) -> aria-current almaz, o yuzden hover/focus/active de kapsanir. */
+[data-mj="bottom-nav-item"][aria-current="page"],
+[data-mj="bottom-nav-item"].active-link,
+[data-mj="bottom-nav-item"]:hover,
+[data-mj="bottom-nav-item"]:focus,
+[data-mj="bottom-nav-item"]:focus-within,
+[data-mj="bottom-nav-item"]:active {
+  color: #f6c453 !important;
+}
+
+/* Merkez ANA SAYFA aktifken de altin (merkez kuralinin yuksek ozgullugunu gecmek icin) */
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="9f1f77ca"])[aria-current="page"],
+[data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="9f1f77ca"]).active-link {
+  color: #f6c453 !important;
+}
+
+/* CANLI DESTEK sohbet (route degil) tiklaninca "secili" gorunsun. html.mj-support-active class'ini header JS ekliyor:
+   sohbet sekmesi altin olur, o an aria-current olan onceki sekmenin altini soner (beyaza doner). */
+html.mj-support-active [data-mj="bottom-nav-item"]:has(span[style*="e4c0aa2d"]) {
+  color: #f6c453 !important;
+}
+/* Onceki secili sekmeyi sondur (rota sekmeleri) — derin yol sart kosmadan, yuksek ozgulluk */
+html.mj-support-active [data-mj="bottom-nav-item"][aria-current="page"]:not(:has(span[style*="e4c0aa2d"])),
+html.mj-support-active [data-mj="bottom-nav-item"].active-link:not(:has(span[style*="e4c0aa2d"])) {
+  color: #e9edf5 !important;
+}
+/* ANA SAYFA onceki secili ise (merkez kurali cok ozgul) onu da sondur */
+html.mj-support-active [data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="9f1f77ca"])[aria-current="page"],
+html.mj-support-active [data-mj="bottom-nav"] div:has(> [data-mj="bottom-nav-item"]) > [data-mj="bottom-nav-item"]:has(span[style*="9f1f77ca"]).active-link {
+  color: #e9edf5 !important;
+}
+
+/* Ozel ikon seti: ANA SAYFA (9f1f77ca) haric 4 ikonu yeni beyaz-mask ikonlarla degistir.
+   Mask oldugu icin ustteki altin gradient boyar. Ikonlar SHA-pinli (immutable, purge yok). */
+[data-mj="bottom-nav-item"] span[style*="b56598da"],
+[data-mj="bottom-nav-item"] span[style*="8c4b3e90"],
+[data-mj="bottom-nav-item"] span[style*="c1e60002"],
+[data-mj="bottom-nav-item"] span[style*="e4c0aa2d"] {
+  -webkit-mask-size: contain !important; mask-size: contain !important;
+  -webkit-mask-repeat: no-repeat !important; mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important; mask-position: center !important;
+  transform: scale(1.18) !important; /* ikonlari biraz buyut (kesmeden) */
+  transform-origin: center bottom !important; /* alttan buyut ki yazi ile bosluk home ile ayni kalsin */
+}
+[data-mj="bottom-nav-item"] span[style*="b56598da"] {
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/canli-casino.png") !important;
+  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/canli-casino.png") !important;
+}
+[data-mj="bottom-nav-item"] span[style*="8c4b3e90"] {
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/casino.png") !important;
+  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/casino.png") !important;
+}
+[data-mj="bottom-nav-item"] span[style*="c1e60002"] {
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/spor.png") !important;
+  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/spor.png") !important;
+}
+[data-mj="bottom-nav-item"] span[style*="e4c0aa2d"] {
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/canli-destek.png") !important;
+  mask-image: url("https://cdn.jsdelivr.net/gh/RayanCherki/style@09737a7/icons/canli-destek.png") !important;
+}
+
+/* ===== Promosyon filtre sekmeleri: alt cizgi -> altin hap butonlar ===== */
+ul[data-mj="promotions-tabs"] {
+  gap: 10px !important;
+  justify-content: flex-start !important;
+  height: auto !important;
+  padding: 4px 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none !important;
+}
+ul[data-mj="promotions-tabs"]::-webkit-scrollbar { display: none !important; }
+ul[data-mj="promotions-tabs"] > li[data-mj="promotions-tabs"] {
+  flex: 0 0 auto !important;
+  width: auto !important;
+}
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"] {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 10px 22px !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)) !important;
+  color: #d7dced !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px !important;
+  white-space: nowrap !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease !important;
+}
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"]:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"].active,
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"][aria-current="page"] {
+  /* site sarisi: KAYIT / Para Yatir butonu (#fdbb10) */
+  background: linear-gradient(180deg, #ffd45e 0%, #fdbb10 55%, #e29e04 100%) !important;
+  border-color: rgba(253, 187, 16, 0.85) !important;
+  color: #222b4a !important;
+  font-weight: 700 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 4px 18px rgba(253, 187, 16, 0.32) !important;
+}
+@media (max-width: 768px) {
+  ul[data-mj="promotions-tabs"] {
+    gap: 8px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"] {
+    padding: 9px 13px !important;
+    font-size: 12.5px !important;
+    letter-spacing: 0 !important;
+  }
+}
+
+/* ===== Promosyon detay: kural metninin arkasindaki pageskin blurlansin ===== */
+[data-mj="promotion-details"] > div:not([data-mj="promotion-header"]) {
+  background: rgba(5, 12, 38, 0.5) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+  padding: 24px !important;
+  line-height: 1.75 !important;
+}
+
+/* Bolum arasi ayirici + bosluk (baslik gruplari kolay okunsun) */
+[data-mj="promotion-details"] li:has(strong) {
+  margin-top: 16px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+[data-mj="promotion-details"] li:first-child:has(strong) {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}
+[data-mj="promotion-details"] li p:has(strong) {
+  padding-bottom: 4px !important;
+}
+
+/* ===== Web: kisayol butonlari ile kategori kartlarinin yeri degisti ===== */
+@media (min-width: 769px) {
+  main[data-mj="page-content"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-content: flex-start !important;
+  }
+  main[data-mj="page-content"] > * { order: 3; flex: 0 0 100%; max-width: 100%; }
+  main[data-mj="page-content"] > [data-mj="widget-banner-container"] { order: 0; }
+  main[data-mj="page-content"] > section[data-mj="widget-pages"]:has(a[href*="/tr/virtual"]) { order: 1; }
+  main[data-mj="page-content"] > [data-mj="widget-bet-win-container"] { order: 2; }
+  /* yan yana duran bloklar tam genislik almasin */
+  main[data-mj="page-content"] > section[data-mj="widget-pages"]:has(a[href*="beniara"]),
+  main[data-mj="page-content"] > section[data-mj="widget-pages"]:has(a[href*="vipclub"]),
+  main[data-mj="page-content"] > section[data-mj="widget-fixed-image-banner"]:nth-last-child(-n+2) {
+    flex: 0 0 auto; width: auto;
+  }
+  /* app store rozetleri ortada kalsin */
+  main[data-mj="page-content"] > section[data-mj="widget-fixed-image-banner"]:nth-last-child(2) { margin-left: auto !important; }
+  main[data-mj="page-content"] > section[data-mj="widget-fixed-image-banner"]:nth-last-child(1) { margin-right: auto !important; }
+  /* son kazananlar ile arasina bosluk */
+  main[data-mj="page-content"] > section[data-mj="widget-pages"]:has(a[href*="beniara"]),
+  main[data-mj="page-content"] > section[data-mj="widget-pages"]:has(a[href*="vipclub"]) {
+    margin-top: 32px !important;
+  }
+}
+
+/* ===== Oyun katalogu ust seridi: mavi zemin kalksin, pageskin gorunsun ===== */
+/* Sekme + arama satirini saran yapiskan blok rgb(5,12,38) ile boyuyordu.        */
+/* casino, canli casino, hizli oyunlar, sanal oyunlar... hepsinde ayni yapi.     */
+[data-mj="game-catalog-right-section"] > div:has(> [data-mj="game-catalog-category-slider"]) {
+  background: transparent !important;
+}
+
+/* ===== Oyun acikken alt menu gizlensin (mobil) ===== */
+/* Menu oyunun ustunu kapatiyordu; gizlenince oyun iframe'i tam ekrani dolduruyor. */
+/* Iki ayri durum var:                                                            */
+/*   giris yapmis  -> /tr/casino/game/<id>  (data-mj="game-page")                  */
+/*   giris yapmamis-> /tr/game/demo/<id>    (game-page YOK)                        */
+/* Ortak nokta: oyun her zaman /api/rgs iframe'inde aciliyor.                      */
+body:has([data-mj="game-page"]) [data-mj="bottom-nav"],
+body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"] {
+  display: none !important;
+}
+
+/* Oyun kabini gorunur alanin altina sabitlensin.
+   Menu gizlendikten sonra Redmi 13 gibi uzun ekranlarda (20.5:9) altta bos
+   lacivert serit kaliyordu: sayfa yuksekligi cihazin gezinme cubugu/guvenli
+   alan payini hesaba katmiyor. fixed + bottom:0 ile kap her zaman gorunur
+   alanin dibine oturur; masaustu emulasyonunda da bosluk 0 olcusuldu. */
+[data-mj="page-content"] > div:has(iframe[src*="/api/rgs"]) {
+  position: fixed !important;
+  top: var(--site-header-height, 40px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: auto !important;
+}
