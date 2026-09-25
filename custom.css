@@ -1240,3 +1240,27 @@ div:has(> button[type="submit"]):has(> div input[name^="inputs."]) > button[type
   font-size: 14px;
   line-height: 14px;
 }
+
+/* ===== Para Yatir + Para Cek formu: gri yazi ve cizgiler beyaz ===== */
+/* Kapsam: gonder butonunu tasiyan form paneli. Butonun kendisine dokunulmuyor
+   (tutar girilince onay rengine donmesi platformda kalsin). Yontem basligi mavi kaliyor. */
+div:has(> button[type="submit"]):has(input) label,
+div:has(> button[type="submit"]):has(input) p:not([color="#0283D3"]),
+div:has(> button[type="submit"]):has(input) .sl-select__placeholder,
+div:has(> button[type="submit"]):has(input) .sl-select__single-value,
+div:has(> button[type="submit"]):has(input) .sl-select__option {
+  color: #ffffff !important;
+}
+div:has(> button[type="submit"]):has(input) input::placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+div:has(> button[type="submit"]):has(input) input,
+div:has(> button[type="submit"]):has(input) .sl-select__control,
+div:has(> button[type="submit"]):has(input) .sl-select__menu {
+  border-color: #ffffff !important;
+}
+div:has(> button[type="submit"]):has(input) .sl-select__control svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
