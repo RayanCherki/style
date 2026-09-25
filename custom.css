@@ -1182,3 +1182,15 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
   bottom: 0 !important;
   height: auto !important;
 }
+
+/* ===== Para Yatir + Para Cek: yontem limit yazilari (Min / Maks) ===== */
+/* Normalde gri, secilince mavi -> normalde beyaz, secilince mavi.
+   Panelde data-mj yok; satiri kalici olan logo gorselinin alt etiketinden buluyoruz.
+   Secili satiri ayiran tek sey hash'li sinif (.app-ltr-14tary1). Platform onu degistirirse
+   secili satir da beyaz kalir, baska bir sey bozulmaz. */
+div:has(> div > img[alt="payment-logo"]) > div:last-child p {
+  color: #ffffff !important;
+}
+div:has(> div > img[alt="payment-logo"]) > div.app-ltr-14tary1:last-child p {
+  color: #0283d3 !important;
+}
