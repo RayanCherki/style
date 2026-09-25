@@ -1202,3 +1202,41 @@ div:has(> div > img[alt="payment-logo"]) > div.app-ltr-14tary1:last-child p {
 div:has(> button[type="submit"]) > p[color] + div:has(> div > p) {
   display: none !important;
 }
+
+/* ===== Para Cek: Ingilizce alan etiketleri Turkce (buyuk harf) ===== */
+/* Etiketler panelden Ingilizce geliyor, metne CSS'le dokunulamadigi icin orijinali gizleyip
+   ::after ile Turkcesini basiyoruz. Alanlari metinden degil yapidan ayiriyoruz:
+   ek alan grubu = name="inputs.N.value" alanlarini tasiyan blok (TUTAR degil); acilir liste = react-select.
+     Hemen Havale : [metin, liste]   -> IBAN, BANKA
+     Kripto       : [liste, metin]   -> KRIPTO PARA, CUZDAN ADRESI
+     Havale / VIP : [metin, metin]   -> BANKA ADI, IBAN
+     Papara       : [metin]          -> IBAN */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]) > div > label {
+  font-size: 0 !important;
+}
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]) > div > label::after {
+  font-size: 14px;
+  line-height: 14px;
+  display: inline-block;
+}
+/* Hemen Havale */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2) input[id^="react-select"]) > div:nth-child(1) > label::after { content: "IBAN"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2) input[id^="react-select"]) > div:nth-child(2) > label::after { content: "BANKA"; }
+/* Kripto */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(1) input[id^="react-select"]) > div:nth-child(1) > label::after { content: "KRİPTO PARA"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(1) input[id^="react-select"]) > div:nth-child(2) > label::after { content: "CÜZDAN ADRESİ"; }
+/* Havale / VIP Havale */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(input[id^="react-select"])):has(> div:nth-child(2)) > div:nth-child(1) > label::after { content: "BANKA ADI"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(input[id^="react-select"])):has(> div:nth-child(2)) > div:nth-child(2) > label::after { content: "IBAN"; }
+/* Papara */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(> div:nth-child(2))) > div:nth-child(1) > label::after { content: "IBAN"; }
+
+/* Cekim butonu: panelden "ÇEKIM" (noktasiz I) geliyor -> "ÇEKİM". Sadece ek alanli panel (Para Cek). */
+div:has(> button[type="submit"]):has(> div input[name^="inputs."]) > button[type="submit"] span span {
+  font-size: 0 !important;
+}
+div:has(> button[type="submit"]):has(> div input[name^="inputs."]) > button[type="submit"] span span::after {
+  content: "ÇEKİM";
+  font-size: 14px;
+  line-height: 14px;
+}
