@@ -1194,3 +1194,11 @@ div:has(> div > img[alt="payment-logo"]) > div:last-child p {
 div:has(> div > img[alt="payment-logo"]) > div.app-ltr-14tary1:last-child p {
   color: #0283d3 !important;
 }
+
+/* ===== Para Yatir + Para Cek: yontem aciklamasi (DESC / DESCRIPTION) gizlensin ===== */
+/* Panelde yontem basliginin hemen altindaki aciklama kutusu; yonetim panelinde yer tutucu
+   metin kalmis ("DESC", "DESCRIPTION", "DESCRIPTION WITHDRAW 114"). SimplePay'lerdeki
+   Bank Name / Iban alanlari bu kaliba uymadigi icin etkilenmiyor. */
+div:has(> button[type="submit"]) > p[color] + div:has(> div > p) {
+  display: none !important;
+}
