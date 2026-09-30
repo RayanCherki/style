@@ -1,0 +1,90 @@
+/* Para Yatir / Para Cek paneli kurallari - TEST ICIN CANLIDAN KALDIRILDI (30.09.2026).
+   Sorun bizden degilse bu blogu custom.css sonuna geri ekle. */
+
+/* ===== Para Yatir + Para Cek: yontem limit yazilari (Min / Maks) ===== */
+/* Normalde gri, secilince mavi -> normalde beyaz, secilince mavi.
+   Panelde data-mj yok; satiri kalici olan logo gorselinin alt etiketinden buluyoruz.
+   Secili satiri ayiran tek sey hash'li sinif (.app-ltr-14tary1). Platform onu degistirirse
+   secili satir da beyaz kalir, baska bir sey bozulmaz. */
+div:has(> div > img[alt="payment-logo"]) > div:last-child p {
+  color: #ffffff !important;
+}
+div:has(> div > img[alt="payment-logo"]) > div.app-ltr-14tary1:last-child p {
+  color: #0283d3 !important;
+}
+
+/* ===== Para Yatir + Para Cek: yontem aciklamasi (DESC / DESCRIPTION) gizlensin ===== */
+/* Panelde yontem basliginin hemen altindaki aciklama kutusu; yonetim panelinde yer tutucu
+   metin kalmis ("DESC", "DESCRIPTION", "DESCRIPTION WITHDRAW 114"). SimplePay'lerdeki
+   Bank Name / Iban alanlari bu kaliba uymadigi icin etkilenmiyor. */
+div:has(> button[type="submit"]) > p[color] + div:has(> div > p) {
+  display: none !important;
+}
+
+/* ===== Para Cek: Ingilizce alan etiketleri Turkce (buyuk harf) ===== */
+/* Etiketler panelden Ingilizce geliyor, metne CSS'le dokunulamadigi icin orijinali gizleyip
+   ::after ile Turkcesini basiyoruz. Alanlari metinden degil yapidan ayiriyoruz:
+   ek alan grubu = name="inputs.N.value" alanlarini tasiyan blok (TUTAR degil); acilir liste = react-select.
+     Hemen Havale : [metin, liste]   -> IBAN, BANKA
+     Kripto       : [liste, metin]   -> KRIPTO PARA, CUZDAN ADRESI
+     Havale / VIP : [metin, metin]   -> BANKA ADI, IBAN
+     Papara       : [metin]          -> IBAN
+   ONEMLI: kurallar alan SAYISINA tam eslesir (1 ya da 2 alan). 3+ alanli yeni yontemler
+   (orn. EasyPay: Email, First Name, National ID...) hic etkilenmez, orijinal etiketleriyle kalir. */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))) > div > label,
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(> div:nth-child(2))):not(:has(input[id^="react-select"])) > div > label {
+  font-size: 0 !important;
+}
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))) > div > label::after,
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(> div:nth-child(2))):not(:has(input[id^="react-select"])) > div > label::after {
+  font-size: 14px;
+  line-height: 14px;
+  display: inline-block;
+}
+/* Hemen Havale: 2 alan, ikincisi liste */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):has(> div:nth-child(2) input[id^="react-select"]) > div:nth-child(1) > label::after { content: "IBAN"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):has(> div:nth-child(2) input[id^="react-select"]) > div:nth-child(2) > label::after { content: "BANKA"; }
+/* Kripto: 2 alan, birincisi liste */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):has(> div:nth-child(1) input[id^="react-select"]) > div:nth-child(1) > label::after { content: "KRİPTO PARA"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):has(> div:nth-child(1) input[id^="react-select"]) > div:nth-child(2) > label::after { content: "CÜZDAN ADRESİ"; }
+/* Havale / VIP Havale: 2 metin alani */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):not(:has(input[id^="react-select"])) > div:nth-child(1) > label::after { content: "BANKA ADI"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):not(:has(input[id^="react-select"])) > div:nth-child(2) > label::after { content: "IBAN"; }
+/* Papara: tek metin alani */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(> div:nth-child(2))):not(:has(input[id^="react-select"])) > div:nth-child(1) > label::after { content: "IBAN"; }
+
+/* Cekim butonu: panelden "ÇEKIM" (noktasiz I) geliyor -> "ÇEKİM".
+   SADECE Para Cek: butondan hemen onceki blok bakiye kutusu (Kilitli / Kullanilabilir Bakiye yazilari).
+   Para Yatir'da o blok yok, YATIRIM butonuna dokunulmaz. */
+div:has(p) + button[type="submit"] span span {
+  font-size: 0 !important;
+}
+div:has(p) + button[type="submit"] span span::after {
+  content: "ÇEKİM";
+  font-size: 14px;
+  line-height: 14px;
+}
+
+/* ===== Para Yatir + Para Cek formu: gri yazi ve cizgiler beyaz ===== */
+/* Kapsam: gonder butonunu tasiyan form paneli. Butonun kendisine dokunulmuyor
+   (tutar girilince onay rengine donmesi platformda kalsin). Yontem basligi mavi kaliyor. */
+div:has(> button[type="submit"]):has(input) label,
+div:has(> button[type="submit"]):has(input) p:not([color="#0283D3"]),
+div:has(> button[type="submit"]):has(input) .sl-select__placeholder,
+div:has(> button[type="submit"]):has(input) .sl-select__single-value,
+div:has(> button[type="submit"]):has(input) .sl-select__option {
+  color: #ffffff !important;
+}
+div:has(> button[type="submit"]):has(input) input::placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+div:has(> button[type="submit"]):has(input) input,
+div:has(> button[type="submit"]):has(input) .sl-select__control,
+div:has(> button[type="submit"]):has(input) .sl-select__menu {
+  border-color: #ffffff !important;
+}
+div:has(> button[type="submit"]):has(input) .sl-select__control svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
