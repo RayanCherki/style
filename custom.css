@@ -1210,32 +1210,38 @@ div:has(> button[type="submit"]) > p[color] + div:has(> div > p) {
      Hemen Havale : [metin, liste]   -> IBAN, BANKA
      Kripto       : [liste, metin]   -> KRIPTO PARA, CUZDAN ADRESI
      Havale / VIP : [metin, metin]   -> BANKA ADI, IBAN
-     Papara       : [metin]          -> IBAN */
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]) > div > label {
+     Papara       : [metin]          -> IBAN
+   ONEMLI: kurallar alan SAYISINA tam eslesir (1 ya da 2 alan). 3+ alanli yeni yontemler
+   (orn. EasyPay: Email, First Name, National ID...) hic etkilenmez, orijinal etiketleriyle kalir. */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))) > div > label,
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(> div:nth-child(2))):not(:has(input[id^="react-select"])) > div > label {
   font-size: 0 !important;
 }
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]) > div > label::after {
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))) > div > label::after,
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(> div:nth-child(2))):not(:has(input[id^="react-select"])) > div > label::after {
   font-size: 14px;
   line-height: 14px;
   display: inline-block;
 }
-/* Hemen Havale */
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2) input[id^="react-select"]) > div:nth-child(1) > label::after { content: "IBAN"; }
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2) input[id^="react-select"]) > div:nth-child(2) > label::after { content: "BANKA"; }
-/* Kripto */
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(1) input[id^="react-select"]) > div:nth-child(1) > label::after { content: "KRİPTO PARA"; }
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(1) input[id^="react-select"]) > div:nth-child(2) > label::after { content: "CÜZDAN ADRESİ"; }
-/* Havale / VIP Havale */
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(input[id^="react-select"])):has(> div:nth-child(2)) > div:nth-child(1) > label::after { content: "BANKA ADI"; }
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(input[id^="react-select"])):has(> div:nth-child(2)) > div:nth-child(2) > label::after { content: "IBAN"; }
-/* Papara */
-div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(> div:nth-child(2))) > div:nth-child(1) > label::after { content: "IBAN"; }
+/* Hemen Havale: 2 alan, ikincisi liste */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):has(> div:nth-child(2) input[id^="react-select"]) > div:nth-child(1) > label::after { content: "IBAN"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):has(> div:nth-child(2) input[id^="react-select"]) > div:nth-child(2) > label::after { content: "BANKA"; }
+/* Kripto: 2 alan, birincisi liste */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):has(> div:nth-child(1) input[id^="react-select"]) > div:nth-child(1) > label::after { content: "KRİPTO PARA"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):has(> div:nth-child(1) input[id^="react-select"]) > div:nth-child(2) > label::after { content: "CÜZDAN ADRESİ"; }
+/* Havale / VIP Havale: 2 metin alani */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):not(:has(input[id^="react-select"])) > div:nth-child(1) > label::after { content: "BANKA ADI"; }
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):has(> div:nth-child(2)):not(:has(> div:nth-child(3))):not(:has(input[id^="react-select"])) > div:nth-child(2) > label::after { content: "IBAN"; }
+/* Papara: tek metin alani */
+div:has(> button[type="submit"]) > div:has(input[name^="inputs."]):not(:has(> div:nth-child(2))):not(:has(input[id^="react-select"])) > div:nth-child(1) > label::after { content: "IBAN"; }
 
-/* Cekim butonu: panelden "ÇEKIM" (noktasiz I) geliyor -> "ÇEKİM". Sadece ek alanli panel (Para Cek). */
-div:has(> button[type="submit"]):has(> div input[name^="inputs."]) > button[type="submit"] span span {
+/* Cekim butonu: panelden "ÇEKIM" (noktasiz I) geliyor -> "ÇEKİM".
+   SADECE Para Cek: butondan hemen onceki blok bakiye kutusu (Kilitli / Kullanilabilir Bakiye yazilari).
+   Para Yatir'da o blok yok, YATIRIM butonuna dokunulmaz. */
+div:has(p) + button[type="submit"] span span {
   font-size: 0 !important;
 }
-div:has(> button[type="submit"]):has(> div input[name^="inputs."]) > button[type="submit"] span span::after {
+div:has(p) + button[type="submit"] span span::after {
   content: "ÇEKİM";
   font-size: 14px;
   line-height: 14px;
