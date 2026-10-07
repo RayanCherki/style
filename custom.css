@@ -1183,3 +1183,25 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
   height: auto !important;
 }
 
+
+/* ===== Ust duyuru seridi: yazi tam ortada ===== */
+/* Yazi bloku icerigi kadar daralip solda kaliyordu. Bloklar genisletilip ortalandi;
+   kapat (X) dugmesi sagda sabitlendi ki yazi sayfanin gercek ortasina otursun. */
+[data-mj="announcement"] {
+  position: relative !important;
+  padding-block: 8px !important;   /* 12px'ten inceltildi */
+}
+[data-mj="announcement"] > div:first-child {
+  padding-inline: 44px !important;   /* yazi X'in altina girmesin */
+}
+[data-mj="announcement"] div:has(p) {
+  flex: 1 1 auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+[data-mj="announcement"] > button[name="close"] {
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
