@@ -1205,3 +1205,9 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
   top: 50% !important;
   transform: translateY(-50%) !important;
 }
+/* Duyurudaki adres linki (marinagir.com): site sarisi */
+[data-mj="announcement"] a,
+[data-mj="announcement"] a u {
+  color: #fdbb10 !important;
+  text-decoration-color: #fdbb10 !important;
+}
