@@ -1211,3 +1211,22 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
   color: #fdbb10 !important;
   text-decoration-color: #fdbb10 !important;
 }
+
+/* Mobil: duyuru seridi acikken icerik basligin altinda kalmasin.
+   Platform sabit basligi serit yuksekligi kadar asagi kaydiriyor (translateY) ama sayfa icerigini
+   kaydirmiyor; banner'in ustu basligin altinda kaliyordu (bu hata incelmeden once de vardi).
+   Serit metni her telefonda (320-430px) en fazla 2 satira sigdirilip yukseklik 52px'e sabitlendi,
+   icerik de ayni miktar asagi itildi. Serit X ile kapatilinca element kalkar, bosluk da kalkar. */
+@media (max-width: 768px) {
+  [data-mj="announcement"] p {
+    font-size: clamp(11px, 3.4vw, 14px) !important;
+    line-height: 18px !important;
+  }
+  [data-mj="announcement"] {
+    min-height: 52px !important;
+    box-sizing: border-box !important;
+  }
+  body:has([data-mj="announcement"]) main[data-mj="page-content"] {
+    margin-top: 52px !important;
+  }
+}
