@@ -1227,6 +1227,6 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
     box-sizing: border-box !important;
   }
   body:has([data-mj="announcement"]) main[data-mj="page-content"] {
-    margin-top: 52px !important;
+    margin-top: 44px !important;   /* 52 = serit; 8px eksik -> baslik-banner arasi 16 yerine 8px */
   }
 }
