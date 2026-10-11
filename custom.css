@@ -948,10 +948,9 @@ main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
   }
 }
 
-/* Hesap menusu > Bonuslarim: sadece Bonus Talebi + Promosyon Kodu kalsin.
-   Yapi: li > div > a.sl-navlink. Her li tek link -> li'yi gizle ki slot komple kalksin,
-   kalan iki oge yukari kaysin ve acilir kutu kuculsun. */
-li:has(a.sl-navlink[href$="t=bonuses"]),
+/* Hesap menusu > Bonuslarim: Anlik Nakit Iade ve Bonus Gecmisi gizli.
+   "Bonuslar" (t=bonuses) 11.10.2026'da promo kodlar icin yeniden acildi.
+   Yapi: li > div > a.sl-navlink. Her li tek link -> li'yi gizle ki slot komple kalksin. */
 li:has(a.sl-navlink[href$="t=instant_cashback"]),
 li:has(a.sl-navlink[href$="t=bonuses_history"]) {
   display: none !important;
@@ -1226,7 +1225,11 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
     min-height: 52px !important;
     box-sizing: border-box !important;
   }
-  body:has([data-mj="announcement"]) main[data-mj="page-content"] {
-    margin-top: 44px !important;   /* 52 = serit; 8px eksik -> baslik-banner arasi 16 yerine 8px */
+  /* Seridi saran sabit kap, baslik yer tutucusunun hemen oncesinde. Serit varken kap dolu,
+     X ile kapatilinca bos kaliyor. :has() yerine :empty kullaniyoruz: iOS Safari body:has()
+     kuralini serit silinince guncellemiyordu, ust kisim bos kaliyordu.
+     44 = 52 serit - 8 (baslik-banner arasi 16 yerine 8px). */
+  [data-mj="header"] > div:first-child:not(:empty) + div {
+    padding-bottom: 44px !important;
   }
 }
