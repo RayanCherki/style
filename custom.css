@@ -1153,8 +1153,21 @@ ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"][aria-current="pa
 /* ===== Oyun katalogu ust seridi: mavi zemin kalksin, pageskin gorunsun ===== */
 /* Sekme + arama satirini saran yapiskan blok rgb(5,12,38) ile boyuyordu.        */
 /* casino, canli casino, hizli oyunlar, sanal oyunlar... hepsinde ayni yapi.     */
-[data-mj="game-catalog-right-section"] > div:has(> [data-mj="game-catalog-category-slider"]) {
-  background: transparent !important;
+/* Blok yapiskan (sticky): sayfa kayinca oyunlar altindan geciyor. Tamamen seffaf  */
+/* olunca oyunlar seridin icinden gorunuyordu. Sayfa en ustteyken seffaf, ilk ~40px */
+/* kaydirmada platformun koyu zeminine geciyor (blok ~48px'te yapisiyor).          */
+/* ponytail: scroll-timeline desteklemeyen tarayici (eski Safari, Firefox) koyu    */
+/* zeminde kalir = platformun orijinali, ust uste binme olmaz.                     */
+@supports (animation-timeline: scroll()) {
+  [data-mj="game-catalog-right-section"] > div:has(> [data-mj="game-catalog-category-slider"]) {
+    animation: katalog-zemin linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 40px;
+  }
+  @keyframes katalog-zemin {
+    from { background-color: transparent; }
+    to   { background-color: rgb(5, 12, 38); }
+  }
 }
 
 /* ===== Oyun acikken alt menu gizlensin (mobil) ===== */
