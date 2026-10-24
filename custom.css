@@ -1153,20 +1153,43 @@ ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"][aria-current="pa
 /* ===== Oyun katalogu ust seridi: mavi zemin kalksin, pageskin gorunsun ===== */
 /* Sekme + arama satirini saran yapiskan blok rgb(5,12,38) ile boyuyordu.        */
 /* casino, canli casino, hizli oyunlar, sanal oyunlar... hepsinde ayni yapi.     */
-/* Blok yapiskan (sticky): sayfa kayinca oyunlar altindan geciyor. Tamamen seffaf  */
-/* olunca oyunlar seridin icinden gorunuyordu. Sayfa en ustteyken seffaf, ilk ~40px */
-/* kaydirmada platformun koyu zeminine geciyor (blok ~48px'te yapisiyor).          */
-/* ponytail: scroll-timeline desteklemeyen tarayici (eski Safari, Firefox) koyu    */
-/* zeminde kalir = platformun orijinali, ust uste binme olmaz.                     */
+/* Blok yapiskan (sticky): sayfa kayinca oyunlar altindan geciyor, seffaf olunca     */
+/* oyunlar seridin icinden gorunuyordu. Sayfa en ustteyken seffaf (pageskin gorunur), */
+/* ilk ~40px kaydirmada ustteki menu kutusuyla ayni cam panele donusuyor: blur +     */
+/* yari saydam zemin, oyunlar bulaniklasir, yazilar okunur.                          */
+/* Animasyon !important'i ezemedigi icin degisen ozellikler animasyonda veriliyor.   */
+[data-mj="game-catalog-right-section"] > div:has(> [data-mj="game-catalog-category-slider"]) {
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 16px !important;
+  padding: 12px !important;
+}
 @supports (animation-timeline: scroll()) {
   [data-mj="game-catalog-right-section"] > div:has(> [data-mj="game-catalog-category-slider"]) {
-    animation: katalog-zemin linear both;
+    animation: katalog-cam linear both;
     animation-timeline: scroll(root);
     animation-range: 0 40px;
   }
-  @keyframes katalog-zemin {
-    from { background-color: transparent; }
-    to   { background-color: rgb(5, 12, 38); }
+  @keyframes katalog-cam {
+    from {
+      background-color: transparent; border-color: transparent;
+      box-shadow: none; backdrop-filter: blur(0) saturate(1);
+    }
+    to {
+      background-color: rgba(10, 18, 45, 0.58); border-color: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(22px) saturate(1.35);
+    }
+  }
+}
+/* ponytail: scroll-timeline olmayan tarayici (eski Safari, Firefox) cam paneli hep gorur */
+@supports not (animation-timeline: scroll()) {
+  [data-mj="game-catalog-right-section"] > div:has(> [data-mj="game-catalog-category-slider"]) {
+    background: rgba(10, 18, 45, 0.58) !important;
+    border-color: rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(22px) saturate(1.35) !important;
+    -webkit-backdrop-filter: blur(22px) saturate(1.35) !important;
   }
 }
 
