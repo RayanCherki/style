@@ -1133,7 +1133,13 @@ ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"][aria-current="pa
   main[data-mj="page-content"] > * { order: 3; flex: 0 0 100%; max-width: 100%; }
   main[data-mj="page-content"] > [data-mj="widget-banner-container"] { order: 0; }
   main[data-mj="page-content"] > section[data-mj="widget-pages"]:has(a[href*="/tr/virtual"]) { order: 1; }
-  main[data-mj="page-content"] > [data-mj="widget-bet-win-container"] { order: 2; }
+  /* son kazananlar: genel max-width:100% platformun 1432px sinirini eziyordu, serit ekran boyu oluyordu.
+     Satir tam genislikte kalir (yanina baska blok gelmesin), icerik 1400px ortada. */
+  main[data-mj="page-content"] > [data-mj="widget-bet-win-container"] {
+    order: 2;
+    padding-left: max(16px, calc((100% - 1400px) / 2));
+    padding-right: max(16px, calc((100% - 1400px) / 2));
+  }
   /* yan yana duran bloklar tam genislik almasin */
   main[data-mj="page-content"] > section[data-mj="widget-pages"]:has(a[href*="beniara"]),
   main[data-mj="page-content"] > section[data-mj="widget-pages"]:has(a[href*="vipclub"]),
