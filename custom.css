@@ -1369,7 +1369,23 @@ button[name="arrow_right"]:disabled {
 
 /* Mavi vurgu yazilari (bonus bakiyesi vb.): platform color="#0283D3" niteligi veriyor -> site sarisi */
 p[color="#0283D3"] { color: #fdbb10 !important; }
-[data-mj="header-right"] .app-ltr-kehe6w { background-color: #fdbb10 !important; } /* ust bakiye: bonus noktasi */
+.app-ltr-kehe6w { background-color: #fdbb10 !important; } /* ust bakiye bonus noktasi + bildirim "okunmamis" noktasi */
+
+/* Bildirimler: Kisisel / Sistem sekmeleri. Secili mavi -> sari, pasif gri -> acik lacivert-beyaz */
+button[role="tab"],
+button[role="tab"] p {
+  color: #d7dced !important;
+}
+button[role="tab"] {
+  border-bottom-color: rgba(255, 255, 255, 0.18) !important;
+}
+button[role="tab"].app-ltr-1jwr6ns,
+button[role="tab"].app-ltr-1jwr6ns p {
+  color: #fdbb10 !important;
+}
+button[role="tab"].app-ltr-1jwr6ns {
+  border-bottom-color: #fdbb10 !important;
+}
 
 /* Hesap menusu (sol): acik bolum mavi yerine sari */
 [data-mj="account-menu"] a.active,
