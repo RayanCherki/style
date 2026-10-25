@@ -1060,32 +1060,9 @@ ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"] {
   width: auto !important;
   height: auto !important;
   padding: 10px 22px !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  border-radius: 999px !important;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)) !important;
-  color: #d7dced !important;
   font-size: 14px !important;
-  font-weight: 600 !important;
   letter-spacing: 0.2px !important;
   white-space: nowrap !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease !important;
-}
-ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"]:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)) !important;
-  color: #ffffff !important;
-  transform: translateY(-1px) !important;
-}
-ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"].active,
-ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"][aria-current="page"] {
-  /* site sarisi: KAYIT / Para Yatir butonu (#fdbb10) */
-  background: linear-gradient(180deg, #ffd45e 0%, #fdbb10 55%, #e29e04 100%) !important;
-  border-color: rgba(253, 187, 16, 0.85) !important;
-  color: #222b4a !important;
-  font-weight: 700 !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    0 4px 18px rgba(253, 187, 16, 0.32) !important;
 }
 @media (max-width: 768px) {
   ul[data-mj="promotions-tabs"] {
@@ -1306,4 +1283,158 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
   border-color: #fdbb10;
   color: #fdbb10 !important;
   transform: translateY(-1px);
+}
+
+
+/* ===== Ortak hap butonlar: sekme / kategori / filtre secimleri =====
+   Pasif: koyu cam hap. Secili: site sarisi (KAYIT / Para Yatir #fdbb10).
+   Yeni bir sekme cikarsa uc listeye de bir selector eklemek yeter. */
+/* ponytail: secili durumu platform bazi yerlerde sadece hash'li sinifla veriyor (app-ltr-...);
+   platform guncellemesinde degisirse o buton pasif gorunur, yeni sinifi buraya yazmak yeter. */
+[data-mj="game-catalog-category-slider-item"],
+[data-mj="game-catalog-mobile-category-chip"],
+[data-mj="widget-bet-win"] > div:first-child > div > span,
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"],
+[role="alertdialog"] div > span[color]:not(:only-of-type) /* hesap: Son 24 Saat / Gecen Ay */,
+span[role="radio"] /* hesap: kayip bonusu secimi */ {
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)) !important;
+  color: #d7dced !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease !important;
+}
+[data-mj="game-catalog-category-slider-item"]:hover,
+[data-mj="game-catalog-mobile-category-chip"]:hover,
+[data-mj="widget-bet-win"] > div:first-child > div > span:hover,
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"]:hover,
+[role="alertdialog"] div > span[color]:not(:only-of-type):hover,
+span[role="radio"]:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+[data-mj="game-catalog-category-slider-item"].app-ltr-15myrg8,
+[data-mj="game-catalog-mobile-category-chip"].app-ltr-1i7x3eq,
+[data-mj="widget-bet-win"] > div:first-child > div > span.app-ltr-1u07ryk,
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"].active,
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"][aria-current="page"],
+[role="alertdialog"] div > span[color="#0283D3"]:not(:only-of-type),
+span[role="radio"][aria-checked="true"] {
+  background: linear-gradient(180deg, #ffd45e 0%, #fdbb10 55%, #e29e04 100%) !important;
+  border-color: rgba(253, 187, 16, 0.85) !important;
+  color: #222b4a !important;
+  font-weight: 700 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 4px 18px rgba(253, 187, 16, 0.32) !important;
+}
+
+/* ===== Ikincil butonlar (TUMU, Tumunu Gor, oklar, arama, Ayrintilari Goster...):
+   duz lacivert / mavi cerceve -> menuyle ayni cam. Sekil (kose) platformdaki gibi kalir. */
+[data-mj="widget-top-providers"] button,
+[data-mj="widget-tournament-slider-header"] a,
+button[name="arrow_left"],
+button[name="arrow_right"],
+[data-mj="game-catalog-mobile-search-toggle"],
+[data-mj="page-content"] button.app-ltr-161ul42 /* turnuvalar: Ayrintilari Goster */,
+button.app-ltr-1j3ooi /* kayip bonusu: Calculate Cashback */ {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+  color: #ffffff !important;
+  transition: background 0.2s ease, transform 0.15s ease !important;
+}
+[data-mj="widget-top-providers"] button:hover,
+[data-mj="widget-tournament-slider-header"] a:hover,
+button[name="arrow_left"]:hover:not(:disabled),
+button[name="arrow_right"]:hover:not(:disabled),
+[data-mj="game-catalog-mobile-search-toggle"]:hover,
+[data-mj="page-content"] button.app-ltr-161ul42:hover,
+button.app-ltr-1j3ooi:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  transform: translateY(-1px) !important;
+}
+button[name="arrow_left"]:disabled,
+button[name="arrow_right"]:disabled {
+  opacity: 0.4 !important;
+}
+
+/* Mavi vurgu yazilari (bonus bakiyesi vb.): platform color="#0283D3" niteligi veriyor -> site sarisi */
+p[color="#0283D3"] { color: #fdbb10 !important; }
+[data-mj="header-right"] .app-ltr-kehe6w { background-color: #fdbb10 !important; } /* ust bakiye: bonus noktasi */
+
+/* Hesap menusu (sol): acik bolum mavi yerine sari */
+[data-mj="account-menu"] a.active,
+[data-mj="account-menu"] a.active p {
+  color: #fdbb10 !important;
+}
+
+/* Mobil menu: secili sayfa ustteki menu gibi sari yazi + sari cerceve */
+[data-mj="mobile-nav-list"] .sl-navlink.active-link,
+[data-mj="mobile-nav-list"] .sl-navlink.active-link span {
+  color: #fdbb10 !important;
+}
+[data-mj="mobile-nav-list"] .sl-navlink.active-link {
+  border-color: rgba(253, 187, 16, 0.45) !important;
+}
+[data-mj="mobile-nav-list"] .sl-navlink.active-link > span[style*="mask-image"] {
+  background-color: #fdbb10 !important;
+}
+
+/* hesap filtre cipleri (Son 24 Saat / Gecen Ay) Bonuslar sekmelerinden buyuk olmasin;
+   :not(:only-of-type) -> tek basina duran deger yazilari (kayip bonusu "-") hap olmasin */
+[role="alertdialog"] div > span[color]:not(:only-of-type) {
+  font-size: 14px !important;
+}
+
+/* Son Kazananlar sekmeleri: boyut + kaydirma kutusu sari parlamayi kesmesin */
+[data-mj="widget-bet-win"] > div:first-child > div {
+  gap: 10px !important;
+  padding: 6px 4px !important;
+}
+[data-mj="widget-bet-win"] > div:first-child > div > span {
+  height: auto !important;
+  padding: 8px 18px !important;
+  font-size: 13px !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  /* mobil kategori butonlari Bonuslar sekmelerinden buyuk olmasin (platform 16px yazi veriyordu) */
+  [data-mj="game-catalog-mobile-category-chip"] {
+    padding: 0 14px !important;
+    font-size: 12.5px !important;
+  }
+  [data-mj="widget-bet-win"] > div:first-child > div { gap: 8px !important; }
+  [data-mj="widget-bet-win"] > div:first-child > div > span {
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+  }
+}
+
+/* Ust menu: secili sayfa cam kutuda kalir, yazisi ve cercevesi sari */
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink.active-link,
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink.active-link * {
+  color: #fdbb10 !important;
+}
+[data-mj="header-nav-list"] [data-mj="header-nav-item"] > .sl-navlink.active-link {
+  border-color: rgba(253, 187, 16, 0.45) !important;
+}
+
+/* Arama kutusu + Seciniz filtresi: cam, tiklaninca sari cerceve */
+[data-mj="game-catalog-game-search"],
+[data-mj="game-catalog-mobile-provider-input"],
+[data-mj="game-catalog-mobile-search"],
+[data-mj^="game-catalog"] .sl-select__control {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: none !important;
+}
+[data-mj="game-catalog-game-search"]:focus,
+[data-mj="game-catalog-mobile-provider-input"]:focus,
+[data-mj="game-catalog-mobile-search"]:focus,
+[data-mj^="game-catalog"] .sl-select__control--is-focused {
+  border-color: #fdbb10 !important;
+  box-shadow: 0 0 0 3px rgba(253, 187, 16, 0.18) !important;
+  outline: none !important;
 }
