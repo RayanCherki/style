@@ -1269,3 +1269,12 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
     padding-bottom: 44px !important;
   }
 }
+
+/* Populer futbol maclari kartlari: panelden yuklenen arka plan gorseli
+   platformda dogal boyutunda (auto) basiliyor, sadece alt-orta kesiti gorunuyordu.
+   Karti tam doldursun. */
+[data-mj="widget-phoenix-sport-content"] a {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
