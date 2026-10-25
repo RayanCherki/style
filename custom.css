@@ -1438,3 +1438,50 @@ p[color="#0283D3"] { color: #fdbb10 !important; }
   box-shadow: 0 0 0 3px rgba(253, 187, 16, 0.18) !important;
   outline: none !important;
 }
+
+/* ===== Basili tutma (mobilde dokunma) anlari: platform mavisi -> sari ===== */
+[data-mj="header-nav-list"] .sl-navlink:active,
+[data-mj="header-nav-list"] .sl-navlink:active *,
+[data-mj="mobile-nav-list"] .sl-navlink:active,
+[data-mj="mobile-nav-list"] .sl-navlink:active span {
+  color: #fdbb10 !important;
+}
+[data-mj="mobile-nav-list"] .sl-navlink:active > span[style*="mask-image"] {
+  background-color: #fdbb10 !important;
+}
+
+/* ===== Acilir secim listeleri (dil, saglayici, sayfa basina satir...) ===== */
+/* kutunun kendisi: uzerine gelince / acikken mavi cerceve yerine sari (ust bar + footer dil secimi dahil) */
+.sl-select__control:hover,
+.sl-select__control--is-focused,
+.sl-select__control--menu-is-open {
+  border-color: rgba(253, 187, 16, 0.6) !important;
+  box-shadow: none !important;
+}
+/* secili secenek mavi yerine sari; dokununca react-select'in kendi mavisi cikmasin */
+.sl-select__option--is-selected {
+  color: #fdbb10 !important;
+  background-color: rgba(253, 187, 16, 0.10) !important;
+}
+.sl-select__option {
+  border-radius: 10px !important;
+}
+.sl-select__option:hover,
+.sl-select__option:active {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+/* mobil: dil penceresi 2 secenek icin 270px kocaman aciliyordu -> icerik kadar, cam panel */
+@media (max-width: 768px) {
+  .sl-select__menu-portal .sl-select__menu {
+    min-height: 0 !important;
+    padding: 8px !important;
+    background: rgba(10, 18, 45, 0.92) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45) !important;
+  }
+  .sl-select__menu-portal .sl-select__option {
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0 12px !important;
+  }
+}
