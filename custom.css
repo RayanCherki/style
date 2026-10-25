@@ -1330,6 +1330,13 @@ span[role="radio"][aria-checked="true"] {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 4px 18px rgba(253, 187, 16, 0.32) !important;
 }
 
+/* hap icindeki ikonlar yazi rengini alsin: secili sarida mavi ikon kalmasin, pasifte yaziyla ayni ton */
+[data-mj="game-catalog-category-slider-item"] span:empty,
+[data-mj="game-catalog-mobile-category-chip"] span:empty,
+ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"] span:empty {
+  background-color: currentColor !important;
+}
+
 /* ===== Ikincil butonlar (TUMU, Tumunu Gor, oklar, arama, Ayrintilari Goster...):
    duz lacivert / mavi cerceve -> menuyle ayni cam. Sekil (kose) platformdaki gibi kalir. */
 [data-mj="widget-top-providers"] button,
@@ -1448,6 +1455,14 @@ p[color="#0283D3"] { color: #fdbb10 !important; }
 }
 [data-mj="mobile-nav-list"] .sl-navlink:active > span[style*="mask-image"] {
   background-color: #fdbb10 !important;
+}
+/* mobil: menu acma (hamburger) ve menudeki alt menu oklari; Bonuslar kartlari uzerine gelince */
+[data-mj="header-left"] button:active,
+[data-mj="nav-item"] button:active {
+  color: #fdbb10 !important;
+}
+[data-mj="promotions-grid"] a:hover {
+  border-color: rgba(253, 187, 16, 0.6) !important;
 }
 
 /* ===== Acilir secim listeleri (dil, saglayici, sayfa basina satir...) ===== */
