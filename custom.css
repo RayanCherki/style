@@ -1277,4 +1277,27 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.6);
+}
+/* Karttaki diger yazilar oran rakamlariyla ayni kalinlikta */
+[data-mj="widget-phoenix-sport-content"] .ph-participant { font-weight: 600; }
+[data-mj="widget-phoenix-sport-content"] .ph-event-header > div { font-weight: 500; }
+
+/* Oran butonlari: gorselin ustunde (ozellikle toplarin uzerinde) okunmuyordu.
+   Hafif cam zemin (gorsel arkadan gorunsun) + yazi golgesi; uzerine gelince site sarisi. */
+[data-mj="widget-phoenix-sport-content"] .ph-outcome {
+  background-color: rgba(5, 12, 38, 0.3) !important;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px !important;
+  font-weight: 600;
+  transition: background-color .2s, border-color .2s, color .2s, transform .2s;
+}
+[data-mj="widget-phoenix-sport-content"] .ph-outcome:hover,
+[data-mj="widget-phoenix-sport-content"] .ph-outcome:active {
+  background-color: rgba(253, 187, 16, 0.18) !important;
+  border-color: #fdbb10;
+  color: #fdbb10 !important;
+  transform: translateY(-1px);
 }
