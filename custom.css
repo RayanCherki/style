@@ -1290,7 +1290,8 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
    Pasif: koyu cam hap. Secili: site sarisi (KAYIT / Para Yatir #fdbb10).
    Yeni bir sekme cikarsa uc listeye de bir selector eklemek yeter. */
 /* ponytail: secili durumu platform bazi yerlerde sadece hash'li sinifla veriyor (app-ltr-...);
-   platform guncellemesinde degisirse o buton pasif gorunur, yeni sinifi buraya yazmak yeter. */
+   platform guncellemesinde / renk paleti degisince bu adlar degisir (30.10 palet degisiminde guncellendi),
+   o buton pasif gorunur, yeni sinifi buraya yazmak yeter. */
 [data-mj="game-catalog-category-slider-item"],
 [data-mj="game-catalog-mobile-category-chip"],
 [data-mj="widget-bet-win"] > div:first-child > div > span,
@@ -1316,12 +1317,12 @@ span[role="radio"]:hover {
   color: #ffffff !important;
   transform: translateY(-1px) !important;
 }
-[data-mj="game-catalog-category-slider-item"].app-ltr-15myrg8,
-[data-mj="game-catalog-mobile-category-chip"].app-ltr-1i7x3eq,
-[data-mj="widget-bet-win"] > div:first-child > div > span.app-ltr-1u07ryk,
+[data-mj="game-catalog-category-slider-item"].app-ltr-31o85w,
+[data-mj="game-catalog-mobile-category-chip"].app-ltr-1lad71k,
+[data-mj="widget-bet-win"] > div:first-child > div > span.app-ltr-1jdwzse,
 ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"].active,
 ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"][aria-current="page"],
-[role="alertdialog"] div > span[color="#0283D3"]:not(:only-of-type),
+[role="alertdialog"] div > span[color="#FDBB10"]:not(:only-of-type),
 span[role="radio"][aria-checked="true"] {
   background: linear-gradient(180deg, #ffd45e 0%, #fdbb10 55%, #e29e04 100%) !important;
   border-color: rgba(253, 187, 16, 0.85) !important;
@@ -1344,8 +1345,8 @@ ul[data-mj="promotions-tabs"] button[data-mj="promotions-tabs"] span:empty {
 button[name="arrow_left"],
 button[name="arrow_right"],
 [data-mj="game-catalog-mobile-search-toggle"],
-[data-mj="page-content"] button.app-ltr-161ul42 /* turnuvalar: Ayrintilari Goster */,
-button.app-ltr-1j3ooi /* kayip bonusu: Calculate Cashback */ {
+[data-mj="page-content"] button.app-ltr-mp5wet /* turnuvalar: Ayrintilari Goster */,
+button.app-ltr-gvjz1g /* kayip bonusu: Calculate Cashback */ {
   background: rgba(255, 255, 255, 0.06) !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
@@ -1357,8 +1358,8 @@ button.app-ltr-1j3ooi /* kayip bonusu: Calculate Cashback */ {
 button[name="arrow_left"]:hover:not(:disabled),
 button[name="arrow_right"]:hover:not(:disabled),
 [data-mj="game-catalog-mobile-search-toggle"]:hover,
-[data-mj="page-content"] button.app-ltr-161ul42:hover,
-button.app-ltr-1j3ooi:hover {
+[data-mj="page-content"] button.app-ltr-mp5wet:hover,
+button.app-ltr-gvjz1g:hover {
   background: rgba(255, 255, 255, 0.12) !important;
   transform: translateY(-1px) !important;
 }
@@ -1367,9 +1368,6 @@ button[name="arrow_right"]:disabled {
   opacity: 0.4 !important;
 }
 
-/* Mavi vurgu yazilari (bonus bakiyesi vb.): platform color="#0283D3" niteligi veriyor -> site sarisi */
-p[color="#0283D3"] { color: #fdbb10 !important; }
-.app-ltr-kehe6w { background-color: #fdbb10 !important; } /* ust bakiye bonus noktasi + bildirim "okunmamis" noktasi */
 
 /* Bildirimler: Kisisel / Sistem sekmeleri. Secili mavi -> sari, pasif gri -> acik lacivert-beyaz */
 button[role="tab"],
@@ -1379,11 +1377,11 @@ button[role="tab"] p {
 button[role="tab"] {
   border-bottom-color: rgba(255, 255, 255, 0.18) !important;
 }
-button[role="tab"].app-ltr-1jwr6ns,
-button[role="tab"].app-ltr-1jwr6ns p {
+button[role="tab"].app-ltr-6ew0xc,
+button[role="tab"].app-ltr-6ew0xc p {
   color: #fdbb10 !important;
 }
-button[role="tab"].app-ltr-1jwr6ns {
+button[role="tab"].app-ltr-6ew0xc {
   border-bottom-color: #fdbb10 !important;
 }
 
@@ -1463,11 +1461,13 @@ button[role="tab"].app-ltr-1jwr6ns {
 }
 
 /* ===== Basili tutma (mobilde dokunma) anlari: platform mavisi -> sari ===== */
-[data-mj="header-nav-list"] .sl-navlink:active,
-[data-mj="header-nav-list"] .sl-navlink:active *,
-[data-mj="mobile-nav-list"] .sl-navlink:active,
-[data-mj="mobile-nav-list"] .sl-navlink:active span {
+/* .sl-navlink = platformun tum menu linkleri (ust menu, Daha Fazla acilir listesi, mobil menu, hesap menusu...) */
+.sl-navlink:active,
+.sl-navlink:active * {
   color: #fdbb10 !important;
+}
+.sl-navlink:active > span:empty {
+  background-color: #fdbb10 !important; /* maske ikonlar */
 }
 [data-mj="mobile-nav-list"] .sl-navlink:active > span[style*="mask-image"] {
   background-color: #fdbb10 !important;
@@ -1501,6 +1501,12 @@ button[role="tab"].app-ltr-1jwr6ns {
 .sl-select__option:active {
   background-color: rgba(255, 255, 255, 0.08) !important;
 }
+/* uzerine gelince gri yerine beyaz; basili tutunca (platformda mavi) ve secili olan sari */
+.sl-select__option:hover { color: #ffffff !important; }
+.sl-select__option:active,
+.sl-select__option--is-selected:hover {
+  color: #fdbb10 !important;
+}
 /* mobil: dil penceresi 2 secenek icin 270px kocaman aciliyordu -> icerik kadar, cam panel */
 @media (max-width: 768px) {
   .sl-select__menu-portal .sl-select__menu {
@@ -1515,4 +1521,23 @@ button[role="tab"].app-ltr-1jwr6ns {
     min-height: 48px !important;
     padding: 0 12px !important;
   }
+}
+
+/* ===== Hesap > Gecmis: tarih secici takvimi (platformda secili gunler / uzerine gelme mavi) ===== */
+.react-daterange-picker__wrapper:hover,
+.react-date-picker__wrapper:hover {
+  border-color: rgba(253, 187, 16, 0.6) !important;
+}
+.react-calendar__tile--active,
+.react-calendar__tile--hasActive,
+.react-calendar__tile--rangeStart,
+.react-calendar__tile--rangeEnd,
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #fdbb10 !important;
+  color: #222b4a !important;
+}
+.react-calendar__tile--range:not(.react-calendar__tile--rangeStart):not(.react-calendar__tile--rangeEnd) {
+  background-color: rgba(253, 187, 16, 0.22) !important;
+  color: #ffffff !important;
 }
