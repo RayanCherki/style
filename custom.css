@@ -1257,13 +1257,39 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
    widget-sport-events ile degistirdi). Panelden yuklenen gorsel kartin ::before'unda
    "contain" basiliyor; karti tam doldursun. Ic bloklarda kalici sinif yok:
    1. cocuk = lig/saat, 2. = takimlar, 3. = oran butonlari. */
-[data-mj="widget-sport-events-card"] {
+/* Golge acik zeminli "Live" rozetini (sag ust) bulandiriyordu; tarih/rozet kosesi haric */
+[data-mj="widget-sport-events-card"] > div:first-child p,
+[data-mj="widget-sport-events-card"] > div:nth-child(n+2) {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.6);
 }
 [data-mj="widget-sport-events-card"]::before {
   background-size: cover !important;
   background-position: center !important;
 }
+/* Takimlar koselerde kaliyordu: ev sahibi W1'in, deplasman W2'nin ustunde ortali.
+   Oran satiri 3 esit sutun + 8px bosluk; 2 oranli maclarda (tenis vb.) iki yarim. */
+[data-mj="widget-sport-events-card"] > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+[data-mj="widget-sport-events-card"]:has(> div:last-child > div:nth-child(3)) > div:nth-child(2) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+[data-mj="widget-sport-events-card"] > div:nth-child(2) > div {
+  width: auto;
+  min-width: 0;
+  align-items: center;
+  text-align: center;
+}
+[data-mj="widget-sport-events-card"] > div:nth-child(2) > div:last-child { grid-column: -2; }
+/* Uzun isimler (River Plate vb.) en fazla 2 satir */
+[data-mj="widget-sport-events-card"] > div:nth-child(2) > div > div {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 /* Karttaki diger yazilar oran rakamlariyla ayni kalinlikta */
 [data-mj="widget-sport-events-card"] > div:nth-child(2) > div > div { font-weight: 600; }
 [data-mj="widget-sport-events-card"] > div:first-child p,
