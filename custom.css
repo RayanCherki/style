@@ -1253,37 +1253,46 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
   }
 }
 
-/* Populer futbol maclari kartlari: panelden yuklenen arka plan gorseli
-   platformda dogal boyutunda (auto) basiliyor, sadece alt-orta kesiti gorunuyordu.
-   Karti tam doldursun. */
-[data-mj="widget-phoenix-sport-content"] a {
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+/* Populer futbol maclari kartlari (platform 01.11'de phoenix widget'ini
+   widget-sport-events ile degistirdi). Panelden yuklenen gorsel kartin ::before'unda
+   "contain" basiliyor; karti tam doldursun. Ic bloklarda kalici sinif yok:
+   1. cocuk = lig/saat, 2. = takimlar, 3. = oran butonlari. */
+[data-mj="widget-sport-events-card"] {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.6);
 }
+[data-mj="widget-sport-events-card"]::before {
+  background-size: cover !important;
+  background-position: center !important;
+}
 /* Karttaki diger yazilar oran rakamlariyla ayni kalinlikta */
-[data-mj="widget-phoenix-sport-content"] .ph-participant { font-weight: 600; }
-[data-mj="widget-phoenix-sport-content"] .ph-event-header > div { font-weight: 500; }
+[data-mj="widget-sport-events-card"] > div:nth-child(2) > div > div { font-weight: 600; }
+[data-mj="widget-sport-events-card"] > div:first-child p,
+[data-mj="widget-sport-events-card"] > div:first-child > div:last-child { font-weight: 500; }
 
 /* Oran butonlari: gorselin ustunde (ozellikle toplarin uzerinde) okunmuyordu.
    Hafif cam zemin (gorsel arkadan gorunsun) + yazi golgesi; uzerine gelince site sarisi. */
-[data-mj="widget-phoenix-sport-content"] .ph-outcome {
+[data-mj="widget-sport-events-card"] > div:last-child > div {
   background-color: rgba(5, 12, 38, 0.3) !important;
   -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color .2s, border-color .2s, transform .2s;
+}
+/* ponytail: boyut ve renk inline style ile geliyor, !important sart */
+[data-mj="widget-sport-events-card"] > div:last-child > div p {
   font-size: 13px !important;
   font-weight: 600;
-  transition: background-color .2s, border-color .2s, color .2s, transform .2s;
+  transition: color .2s;
 }
-[data-mj="widget-phoenix-sport-content"] .ph-outcome:hover,
-[data-mj="widget-phoenix-sport-content"] .ph-outcome:active {
+[data-mj="widget-sport-events-card"] > div:last-child > div p:last-child { font-weight: 700; }
+[data-mj="widget-sport-events-card"] > div:last-child > div:hover,
+[data-mj="widget-sport-events-card"] > div:last-child > div:active {
   background-color: rgba(253, 187, 16, 0.18) !important;
   border-color: #fdbb10;
-  color: #fdbb10 !important;
   transform: translateY(-1px);
 }
+[data-mj="widget-sport-events-card"] > div:last-child > div:hover p,
+[data-mj="widget-sport-events-card"] > div:last-child > div:active p { color: #fdbb10 !important; }
 
 
 /* ===== Ortak hap butonlar: sekme / kategori / filtre secimleri =====
