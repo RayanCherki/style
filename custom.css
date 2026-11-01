@@ -1283,8 +1283,12 @@ body:has([data-mj="page-content"] iframe[src*="/api/rgs"]) [data-mj="bottom-nav"
   text-align: center;
 }
 [data-mj="widget-sport-events-card"] > div:nth-child(2) > div:last-child { grid-column: -2; }
-/* Uzun isimler (River Plate vb.) en fazla 2 satir */
+/* Isim butondan 16px tasabilir (Newcastle United tek satir), daha uzunu
+   (River Plate vb.) ortali en fazla 2 satir. Platform isme sola/saga hizali veriyor. */
 [data-mj="widget-sport-events-card"] > div:nth-child(2) > div > div {
+  width: max-content;
+  max-width: calc(100% + 16px);
+  text-align: center;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
