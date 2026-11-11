@@ -75,15 +75,15 @@
   line-height: 8px;
   margin-top: 4px;
 }
-/* Ikon: digerleri gibi altin degrade maske (dokuz nokta). Acikken platform carpi (X) koyar, o da altin. */
+/* Ikon: digerleri gibi altin degrade maske (dort kare). Acikken platform carpi (X) koyar, o da altin. */
 [data-mj="bottom-nav-menu"] i.sl-icon {
   color: #f4c65a;
   filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.4));
 }
 [data-mj="bottom-nav-menu"] i[name="menu"] {
   background-image: linear-gradient(180deg, #ffe7a3 0%, #f4c65a 55%, #e0a63a 100%);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Ccircle cx='4.5' cy='4.5' r='2.6'/%3E%3Ccircle cx='12' cy='4.5' r='2.6'/%3E%3Ccircle cx='19.5' cy='4.5' r='2.6'/%3E%3Ccircle cx='4.5' cy='12' r='2.6'/%3E%3Ccircle cx='12' cy='12' r='2.6'/%3E%3Ccircle cx='19.5' cy='12' r='2.6'/%3E%3Ccircle cx='4.5' cy='19.5' r='2.6'/%3E%3Ccircle cx='12' cy='19.5' r='2.6'/%3E%3Ccircle cx='19.5' cy='19.5' r='2.6'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Ccircle cx='4.5' cy='4.5' r='2.6'/%3E%3Ccircle cx='12' cy='4.5' r='2.6'/%3E%3Ccircle cx='19.5' cy='4.5' r='2.6'/%3E%3Ccircle cx='4.5' cy='12' r='2.6'/%3E%3Ccircle cx='12' cy='12' r='2.6'/%3E%3Ccircle cx='19.5' cy='12' r='2.6'/%3E%3Ccircle cx='4.5' cy='19.5' r='2.6'/%3E%3Ccircle cx='12' cy='19.5' r='2.6'/%3E%3Ccircle cx='19.5' cy='19.5' r='2.6'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Crect x='2.5' y='2.5' width='8.5' height='8.5' rx='2.4'/%3E%3Crect x='13' y='2.5' width='8.5' height='8.5' rx='2.4'/%3E%3Crect x='2.5' y='13' width='8.5' height='8.5' rx='2.4'/%3E%3Crect x='13' y='13' width='8.5' height='8.5' rx='2.4'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Crect x='2.5' y='2.5' width='8.5' height='8.5' rx='2.4'/%3E%3Crect x='13' y='2.5' width='8.5' height='8.5' rx='2.4'/%3E%3Crect x='2.5' y='13' width='8.5' height='8.5' rx='2.4'/%3E%3Crect x='13' y='13' width='8.5' height='8.5' rx='2.4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 [data-mj="bottom-nav-menu"] i[name="menu"] svg { visibility: hidden; }
 
@@ -368,6 +368,7 @@ aside a,
 [data-mj="header"],
 .app-ltr-rl0abu,
 .app-ltr-pri86d,
+[data-mj="sidebar"],
 [data-mj="social-links"] {
   --glass-bg: rgba(10, 18, 45, 0.58);
   --glass-bg-2: rgba(29, 42, 78, 0.48);
@@ -955,6 +956,118 @@ main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
 [data-mj="header-right"] p[color] {
   font-size: 11px !important;
   line-height: 1.1 !important;
+}
+
+/* ===== Yan menu: 11.11 altyapi surumu eski cekmeceyi (mobile-nav-list) [data-mj="sidebar"] ile degistirdi.
+   Eski gorunum geri: cam zemin, her satir 52px cam kart, beyaz ikon + kalin beyaz yazi, secili satir altin,
+   alt menuler ince cerceveli. Eski kurallar (mobile-nav-list, .app-ltr-pri86d) eski menu donerse diye duruyor. */
+[data-mj="sidebar"] {
+  /* eskiden arkadaki sayfa karartiliyordu (0.55) + cekmece camı (0.58) => ~0.82 koyuluk */
+  background: rgba(10, 18, 45, 0.82) !important;
+  border-right: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow), var(--glass-inset) !important;
+  backdrop-filter: blur(22px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(135%) !important;
+}
+/* Ustteki "Bonus Talep" ozel butonu: panel gorseli mavi -> site altin butonu, yazi ve ikon beyaz */
+[data-mj="sidebar-special-button"] > a {
+  min-height: 52px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(180deg, #ffd45e 0%, #fdbb10 55%, #e29e04 100%) !important;
+  box-shadow: 0 6px 18px rgba(253, 187, 16, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+  color: #fff !important;
+}
+[data-mj="sidebar-special-button"] > a span[color] {
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+[data-mj="sidebar-special-button"] > a img {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+[data-mj="sidebar-nav-list"] > li > a {
+  min-height: 52px !important;
+  padding-left: 14px !important;
+  gap: 10px !important;
+  border-radius: 12px !important;
+  background: var(--glass-bg-2) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  transition: background 0.18s var(--glass-ease), border-color 0.18s var(--glass-ease) !important;
+}
+[data-mj="sidebar-nav-list"] > li > a:has(+ span [data-mj="sidebar-section-toggle"]) {
+  padding-right: 52px !important;
+}
+/* Alt menu oku: 52px kartin ortasinda kucuk koyu kare (eski menudeki gibi) */
+[data-mj="sidebar-nav-list"] > li > span:has(> [data-mj="sidebar-section-toggle"]) {
+  top: 8px !important;
+  right: 8px !important;
+}
+[data-mj="sidebar-section-toggle"] {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+/* Ikonlar: panelden gelen renkli gorseller -> eski menudeki gibi tek renk beyaz */
+[data-mj="sidebar"] [data-mj="sidebar-icon"],
+[data-mj="sidebar"] [data-mj="sidebar-icon"] img {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+}
+[data-mj="sidebar"] [data-mj="sidebar-icon"] img {
+  filter: brightness(0) invert(1);
+}
+/* Alt menu satirlari: seffaf, ince cerceve; basindaki dikey cizgi yok */
+[data-mj="sidebar-section"] ul::before {
+  display: none !important;
+}
+[data-mj="sidebar-section"] ul {
+  gap: 8px !important;
+  padding: 8px 8px 0 22px !important;
+}
+[data-mj="sidebar-subitem"] {
+  min-height: 42px !important;
+  padding-left: 12px !important;
+  gap: 10px !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #fff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+[data-mj="sidebar"] a:hover {
+  background: var(--glass-hover) !important;
+}
+/* Alt kisim: sosyal medya kutusu kalan genisligi doldurur, ikonlar esit aralikli;
+   dil butonu yaninda ayni cam kutu */
+[data-mj="sidebar-footer"] {
+  gap: 8px !important;
+}
+[data-mj="sidebar-footer"] [data-mj="social-links"] {
+  justify-content: space-evenly !important;
+}
+[data-mj="sidebar-language"] {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 14px !important;
+  border: 1px solid var(--glass-border) !important;
+  background: var(--glass-bg-2) !important;
+  box-shadow: var(--glass-inset) !important;
+}
+/* Secili sayfa ve basili tutma: altin yazi + altin cerceve + altin ikon */
+[data-mj="sidebar"] a[aria-current="page"],
+[data-mj="sidebar"] a:active {
+  color: #fdbb10 !important;
+  border-color: rgba(253, 187, 16, 0.45) !important;
+}
+[data-mj="sidebar"] a[aria-current="page"] [data-mj="sidebar-icon"] img,
+[data-mj="sidebar"] a:active [data-mj="sidebar-icon"] img {
+  filter: brightness(0) invert(76%) sepia(28%) saturate(5328%) hue-rotate(352deg) brightness(117%) contrast(99%);
 }
 
 /* UYGULAMA nav linki sadece webde: mobil cekmecede gizle */
