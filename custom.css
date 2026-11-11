@@ -1044,7 +1044,8 @@ main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
   font-size: 13px !important;
   font-weight: 700 !important;
 }
-[data-mj="sidebar"] a:hover {
+/* hover/basili/secili sadece menu satirlarinda; Bonus Talep altin butonu basinca da altin kalir */
+[data-mj="sidebar-nav-list"] a:hover {
   background: var(--glass-hover) !important;
 }
 /* Alt kisim: sosyal medya kutusu kalan genisligi doldurur, ikonlar esit aralikli;
@@ -1063,16 +1064,25 @@ main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
   background: var(--glass-bg-2) !important;
   box-shadow: var(--glass-inset) !important;
 }
-/* Secili sayfa ve basili tutma: altin yazi + altin cerceve + ikon yaziyla ayni altin
-   (filtre Safari motorunda da #fdbb10 veriyor) */
-[data-mj="sidebar"] a[aria-current="page"],
-[data-mj="sidebar"] a:active {
+/* Secili sayfa ve basili tutma: altin yazi + altin cerceve + ikon yaziyla birebir ayni altin.
+   Ikon rengi filtre hesabiyla degil golgeyle: gorsel kutudan disari kayar, golgesi tam #fdbb10
+   olarak yerine duser (renk filtresi telefonda turuncuya kaciyordu). Yazi gecissiz, ikonla ayni anda. */
+[data-mj="sidebar-nav-list"] a[aria-current="page"],
+[data-mj="sidebar-nav-list"] a:active {
   color: #fdbb10 !important;
   border-color: rgba(253, 187, 16, 0.45) !important;
 }
-[data-mj="sidebar"] a[aria-current="page"] [data-mj="sidebar-icon"] img,
-[data-mj="sidebar"] a:active [data-mj="sidebar-icon"] img {
-  filter: brightness(0) invert(76%) sepia(28%) saturate(5328%) hue-rotate(352deg) brightness(117%) contrast(99%);
+[data-mj="sidebar-subitem"] {
+  transition: none !important;
+}
+[data-mj="sidebar-nav-list"] [data-mj="sidebar-icon"] {
+  overflow: hidden !important;
+  border-radius: 0 !important;
+}
+[data-mj="sidebar-nav-list"] a[aria-current="page"] [data-mj="sidebar-icon"] img,
+[data-mj="sidebar-nav-list"] a:active [data-mj="sidebar-icon"] img {
+  transform: translateX(-40px);
+  filter: drop-shadow(40px 0 0 #fdbb10);
 }
 
 /* UYGULAMA nav linki sadece webde: mobil cekmecede gizle */
