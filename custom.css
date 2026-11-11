@@ -1064,9 +1064,10 @@ main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
   background: var(--glass-bg-2) !important;
   box-shadow: var(--glass-inset) !important;
 }
-/* Secili sayfa ve basili tutma: altin yazi + altin cerceve + ikon yaziyla birebir ayni altin.
-   Ikon rengi filtre hesabiyla degil golgeyle: gorsel kutudan disari kayar, golgesi tam #fdbb10
-   olarak yerine duser (renk filtresi telefonda turuncuya kaciyordu). Yazi gecissiz, ikonla ayni anda. */
+/* Secili sayfa ve basili tutma: altin yazi + altin cerceve + ikon yaziyla ayni altin (#fdbb10).
+   Ikon filtresinin hicbir adimi 0-1 disina tasmiyor: iPhone basarken (GPU) ve sonra (CPU) ayni rengi
+   cizer. Eski asiri doymus filtre basinca once turuncu gorunuyordu; golge hilesi iPhone'da ikonu
+   kaybettiriyordu. Yazi gecissiz, ikonla ayni anda. */
 [data-mj="sidebar-nav-list"] a[aria-current="page"],
 [data-mj="sidebar-nav-list"] a:active {
   color: #fdbb10 !important;
@@ -1075,14 +1076,9 @@ main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
 [data-mj="sidebar-subitem"] {
   transition: none !important;
 }
-[data-mj="sidebar-nav-list"] [data-mj="sidebar-icon"] {
-  overflow: hidden !important;
-  border-radius: 0 !important;
-}
 [data-mj="sidebar-nav-list"] a[aria-current="page"] [data-mj="sidebar-icon"] img,
 [data-mj="sidebar-nav-list"] a:active [data-mj="sidebar-icon"] img {
-  transform: translateX(-40px);
-  filter: drop-shadow(40px 0 0 #fdbb10);
+  filter: brightness(0) invert(51.5%) sepia(94.1%) saturate(403%) hue-rotate(5.6deg) brightness(119.6%);
 }
 
 /* UYGULAMA nav linki sadece webde: mobil cekmecede gizle */
