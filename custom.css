@@ -1756,3 +1756,12 @@ button[role="tab"].app-ltr-6ew0xc {
   background-color: rgba(253, 187, 16, 0.22) !important;
   color: #ffffff !important;
 }
+
+/* Para Yatir yontemleri: Min ve Maks ayri renk.
+   Secili/detay: Maks secili sari #fdbb10, Min palet 300 #ffd45e (secildi; 200 patlak, 50 fazla acikti).
+   Secili degil: gri yerine beyaza yakin; Min biraz acik (#aab2d1), Maks daha beyaz (#c6cce3). */
+/* ponytail: secili/detay kabi .app-ltr-lrwljn, normal kap .app-ltr-13hiva0 (hash; surum/tema degisince guncelle) */
+[role="alertdialog"] .app-ltr-lrwljn > p:first-child { color: #ffd45e !important; }
+[role="alertdialog"] .app-ltr-lrwljn > p:last-child { color: #fdbb10 !important; }
+[role="alertdialog"] .app-ltr-13hiva0 > p:first-child { color: #aab2d1 !important; }
+[role="alertdialog"] .app-ltr-13hiva0 > p:last-child { color: #c6cce3 !important; }
