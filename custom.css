@@ -989,6 +989,46 @@ main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
 [data-mj="sidebar-special-button"] > a img {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
+/* Yan menu ozel kartlari (panel > Ozel Butonlar, yan menude; yeni surum, sadece giris yapinca): PARA YATIR.
+   Yarim genislik koyu kutu -> Bonus Talep'in altinda tam genislik, altin cerceveli buton.
+   Bonus Talep dolu altin, bu cerceveli altin: ikisi de diger satirlardan ayrisir. */
+[data-mj="sidebar-special-menus"] {
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+}
+[data-mj="sidebar-special-menus"] > * {
+  aspect-ratio: auto !important; /* platform kareye yakin kutu yapiyor (116/56) */
+  min-height: 52px !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important; /* ₺ ikonunun kendi ic boslugu var */
+  padding: 0 16px !important;
+  border-radius: 12px !important;
+  background: var(--glass-bg-2) !important;
+  border: 1px solid rgba(253, 187, 16, 0.75) !important;
+  box-shadow: 0 0 14px rgba(253, 187, 16, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  cursor: pointer;
+}
+[data-mj="sidebar-special-menus"] > *:active {
+  background: rgba(253, 187, 16, 0.14) !important;
+}
+[data-mj="sidebar-special-menus"] p {
+  width: auto !important;
+  color: #fdbb10 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+/* PARA YATIR ikonu: panelde $ yuklu -> sitenin bakiyede kullandigi ₺ ikonu (try).
+   Panelde ikon degistirilirse bu kural kendiliginden devreden cikar. */
+[data-mj="sidebar-special-menus"] img[src*="7be791b6"] {
+  content: url("/api/cmsgateway/api/v1.0/AssetTemplateSite/try.png");
+}
+[data-mj="sidebar-special-menus"] img {
+  width: 26px !important;
+  height: 26px !important;
+  filter: brightness(0) invert(51.5%) sepia(94.1%) saturate(403%) hue-rotate(5.6deg) brightness(119.6%);
+}
 [data-mj="sidebar-nav-list"] > li > a {
   min-height: 52px !important;
   padding-left: 14px !important;
