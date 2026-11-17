@@ -1019,10 +1019,11 @@ main > *:not(:has(a[href*="uygulama.marinacasinovip.com"])) {
   font-size: 16px !important;
   font-weight: 700 !important;
 }
-/* PARA YATIR ikonu: panelde $ yuklu -> sitenin bakiyede kullandigi ₺ ikonu (try).
+/* PARA YATIR ikonu: panelde $ yuklu -> sitenin bakiyede kullandigi ₺ ikonu (try.png'nin SVG'si gomulu;
+   CSS jsDelivr'den geldigi icin "/api/..." gibi site yolu jsDelivr'de aranip bulunmuyordu).
    Panelde ikon degistirilirse bu kural kendiliginden devreden cikar. */
 [data-mj="sidebar-special-menus"] img[src*="7be791b6"] {
-  content: url("/api/cmsgateway/api/v1.0/AssetTemplateSite/try.png");
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='translate%2812 12%29 scale%280.8%29 translate%28-12 -12%29'%3E%3Cpath fill='%23fff' d='M18.45,11.22v.5c0,2.44-.95,4.75-2.68,6.49-1.74,1.73-4.04,2.68-6.49,2.68h-1.07V12.26l-1.93,.7-.73-2.01,2.66-.97v-.61l-1.93,.7-.73-2.01,2.66-.98V3.11h2.14v3.19l5.19-1.89,.74,2.02-5.93,2.15v.62l5.19-1.89,.74,2.01-5.93,2.16v7.17c3.38-.52,5.96-3.47,5.96-6.94v-.5h2.14Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 [data-mj="sidebar-special-menus"] img {
   width: 26px !important;
